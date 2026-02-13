@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------
+# Assembly language program that reads data from the switches
+# and displays it on the LEDs.
+# ---------------------------------------------------------------
+
+.text
+
+seven_seg_hex:
+  .word 0x40 #0
+  .word 0x79 #1
+  .word 0x24 #2
+  .word 0x30 #3
+  .word 0x19 #4
+  .word 0x12 #5
+  .word 0x02 #6
+  .word 0x78 #7
+  .word 0x00 #8
+  .word 0x10 #9
+
+.equ switches, 0x11020    #find the base address of Switches in the system.h file
+.equ pushbuttons, 0x11010    #find the base address of Switches in the system.h file
+.equ HEX0, 0x11000    #find the base address of Switches in the system.h file
+
+#Define the main program
+.global main
+main:
+  movia r2, switches
+  movia r3, pushbuttons
+  movia r4, HEX0
+
+  movi r5, 0
+  call display_digit
+loop:
+  ldw r6, 0(r3) #check button
+  andi r6, r6, 0x02 #saves previous state of button
+  beq r6, zero, loop
+
+  ldw r7, 0(r2)        #check switch
+  andi r7, r7, 0x1
+
+  bne r7, zero, increment
+  call decrement
+
+increment:
+  addi r5, r5, 1  #counter for increment
+  bgt r5, 10, set_zero
+  br update_display
+
+decrement:
+  subi r5, r5, 1              #counter for decrement
+  blt r5, zero, wrap_around_9 #check if counter is < 0, wrap around to 9
+  br update_display
+
+display_digit:
+  slli r6, r5, 2
+  movia r17, seven_seg_hex  #initiates the array
+  add r17, r17, r6          #increments the array
+  ldw r16, 0(r17)
+  stw r16, 0(r4)			#outputs display
+  ret
+
+update_display:
+  call release_key
+  call display_digit #updates the display
+  br loop
+
+release_key:
+  ldw r6, 0(r3)              #loads current key state
+  andi r6, r6, 0x2
+  bne r6, zero, release_key  #checks if key is released
+  ret
+
+set_zero:
+  movi r5, 0
+  br update_display
+
+wrap_around_9:
+  movi r5, 9
+  br update_display
+
+
+
+
+

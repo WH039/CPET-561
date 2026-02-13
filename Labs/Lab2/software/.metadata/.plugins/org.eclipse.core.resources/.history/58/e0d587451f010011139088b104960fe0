@@ -1,0 +1,66 @@
+/* Lab 2 Display */
+
+  .text
+# Array for 7-segment patterns to display digits 0-9
+hex_patterns:
+    .word 0x40   # Pattern for '0'
+    .word 0x79   # Pattern for '1'
+    .word 0x24   # Pattern for '2'
+    .word 0x30   # Pattern for '3'
+    .word 0x19   # Pattern for '4'
+    .word 0x12   # Pattern for '5'
+    .word 0x02   # Pattern for '6'
+    .word 0x78   # Pattern for '7'
+    .word 0x00   # Pattern for '8'
+    .word 0x10   # Pattern for '9'
+# Define memory-mapped base addresses
+.equ hex0_base, 0x11020    # Address for hex0
+.equ key1_base, 0x11010    # Address for pushbuttons
+.equ sw_base, 0x11000    # Address for switches
+    .global main
+main:
+    movia r2, hex0_base
+    movia r3, key1_base
+    movia r4, sw_base
+    movi r5, 0
+    call display_hex
+main_loop:
+    ldw r6, 0(r3)
+    andi r6, r6, 0x02
+    beq r6, zero, main_loop
+    ldw r7, 0(r4)
+    andi r7, r7, 0x1
+
+    bne r7, zero, increment
+    call decrement
+display_hex:
+    slli r6, r5, 2
+    movia r17, hex_patterns
+    add r17, r17, r6
+    ldw r16, 0(r17)
+    stw r16, 0(r2)
+    ret
+increment:
+    addi r5, r5, 1           # Increment counter
+    cmpgeui r16, r5, 10        # Check if counter >= 10, if 10 loop counter to zero and display
+    beq r16, zero, update_hex
+    movi r5, 0
+reset_to_zero:
+	movi r5, 0
+decrement:
+    subi r5, r5, 1           # Decrement counter
+    blt r5, zero, wrap_to_9  # If counter < 0, wrap to 9
+    br update_hex
+
+update_hex:
+    call wait_for_release
+    call display_hex       # Update display
+    br main_loop
+wait_for_release:
+    ldw r6, 0(r3)            # Load key1 state
+    andi r6, r6, 0x2         # Mask to check key1
+    bne r6, zero, wait_for_release # Wait until key1 is released
+    ret
+wrap_to_9:
+    movi r5, 9               # Set counter to 9
+    br update_hex

@@ -1,0 +1,106 @@
+# ---------------------------------------------------------------
+# Assembly language program that reads data from the switches
+# and displays it on the LEDs.
+# ---------------------------------------------------------------
+
+.text
+
+# define a macro to move a 32 bit address to a register
+
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+# define constants
+.equ switches, 0x11020    #find the base address of Switches in the system.h file
+.equ pushbuttons, 0x11010    #find the base address of Switches in the system.h file
+.equ HEX0, 0x11000    #find the base address of Switches in the system.h file
+
+# 7-segment display patterns (active-low, assuming common anode)
+# Bits: gfedcba (7 segments)
+
+.equ SEG_0, 0b1000000    # Pattern for '0' (segments a,b,c,d,e,f)
+.equ SEG_1, 0b1111001    # Pattern for '1' (segments b,c)
+.equ SEG_2, 0b0100100    # Pattern for '2' (segments a,b,d,e,g)
+.equ SEG_3, 0b0110000    # Pattern for '3' (segments a,b,c,d,g)
+.equ SEG_4, 0b0011001    # Pattern for '4' (segments b,c,f,g)
+.equ SEG_5, 0b0010010    # Pattern for '5' (segments a,c,d,f,g)
+.equ SEG_6, 0b0000010    # Pattern for '6' (segments a,c,d,e,f,g)
+.equ SEG_7, 0b1111000    # Pattern for '7' (segments a,b,c)
+.equ SEG_8, 0b0000000    # Pattern for '8' (all segments)
+.equ SEG_9, 0b0010000    # Pattern for '9' (segments a,b,c,d,f,g)
+
+
+#Define the main program
+.global main
+main:
+  movia r2, switches
+  movia r3, pushbuttons
+  movia r4, HEX0
+
+  movi r5, 0
+  call display_digit
+loop:
+  ldw r6, 0(r3) #check button
+  andi r6, r6, 0x02 #saves previous state of button
+  beq r6, zero, loop
+
+  ldw r7,0(r2)        #check switch
+  andi r7, r7, 0x1
+
+  bne r7, zero, increment
+  call decrement
+
+increment:
+  addi r5, r5, 1  #counter for increment
+  cmpgeui r16, r5, 10 #compares the two values to check if counter is >=10
+  beq r16, zero, update_hex
+  movi r5, 0
+
+decrement:
+  subi r5, r5, 1              #counter for decrement
+  blt r5, zero, wrap_around_9 #check if counter is < 0, wrap around to 9
+  br update_display
+
+display_digit:
+  slli r6, r5, 1
+  movia r17, seven_seg_hex  #initiates the array
+  add r17, r17, r6          #increments the array
+  ldw r16, 0(r17)
+  stw r16, 0(r4)			#outputs display
+  ret
+
+update_display:
+  call release_key
+  call display_digit #updates the display
+  br loop
+
+release_key:
+  ldw r6, 0(r3)              #loads current key state
+  andi r6, r6, 0x2
+  bne r6, zero, release_key  #checks if key is released
+  ret
+
+set_zero:
+movi r5, 0
+
+wrap_around_9:
+  movi r5, 9
+  br update_hex
+
+.data
+seven_seg_hex:
+  .word 0x40 #0
+  .word 0x79 #1
+  .word 0x24 #2
+  .word 0x30 #3
+  .word 0x19 #4
+  .word 0x12 #5
+  .word 0x02 #6
+  .word 0x78 #7
+  .word 0x00 #8
+  .word 0x10 #9
+
+
+

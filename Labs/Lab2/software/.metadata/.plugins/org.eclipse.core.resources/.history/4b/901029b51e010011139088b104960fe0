@@ -1,0 +1,174 @@
+# ---------------------------------------------------------------
+# Assembly language program that:
+# a. Displays 0 on hex0
+# b. Checks to see if key1 is pushed (active low)
+#    i. If SW0 is high, increments the value on hex0
+#    ii. If SW0 is low, decrements the value on hex0
+# c. Do not increment or decrement the value on hex0 until key1 is released
+# d. Do not go higher than 9, or lower than 0.
+# ---------------------------------------------------------------
+
+.text
+
+# define a macro to move a 32 bit address to a register
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+# define constants
+.equ SWITCHES, 0x11020       # Base address of Switches
+.equ PUSHBUTTONS, 0x11010    # Base address of Pushbuttons
+.equ HEX0, 0x11000           # Base address of 7-segment display 0
+
+# 7-segment display patterns (active-low, assuming common anode)
+# Bits: gfedcba (7 segments)
+.equ SEG_0, 0b1000000    # Pattern for '0' (segments a,b,c,d,e,f)
+.equ SEG_1, 0b1111001    # Pattern for '1' (segments b,c)
+.equ SEG_2, 0b0100100    # Pattern for '2' (segments a,b,d,e,g)
+.equ SEG_3, 0b0110000    # Pattern for '3' (segments a,b,c,d,g)
+.equ SEG_4, 0b0011001    # Pattern for '4' (segments b,c,f,g)
+.equ SEG_5, 0b0010010    # Pattern for '5' (segments a,c,d,f,g)
+.equ SEG_6, 0b0000010    # Pattern for '6' (segments a,c,d,e,f,g)
+.equ SEG_7, 0b1111000    # Pattern for '7' (segments a,b,c)
+.equ SEG_8, 0b0000000    # Pattern for '8' (all segments)
+.equ SEG_9, 0b0010000    # Pattern for '9' (segments a,b,c,d,f,g)
+
+# Define the main program
+.global main
+
+main:
+  # Load addresses into registers
+  MOVIA r2, SWITCHES       # r2 = switches address
+  MOVIA r3, PUSHBUTTONS    # r3 = pushbuttons address
+  MOVIA r4, HEX0           # r4 = 7-segment display address
+
+  # Initialize current value to 0
+  movi r5, 0               # r5 = current digit (0-9)
+
+  # Display initial '0'
+  movi r6, SEG_0           # Load pattern for '0'
+  stbio r6, 0(r4)          # Display '0' on HEX0
+
+  # Initialize previous button state
+  movi r8, 0               # r8 = previous button state (0 = not pressed)
+
+main_loop:
+  # Read pushbuttons (assuming key1 is bit position 1, 0-indexed)
+  ldbio r9, 0(r3)          # Read pushbuttons into r9
+  andi r9, r9, 0b10        # Mask to get only key1 (bit 1)
+
+  # Read switch 0
+  ldbio r10, 0(r2)         # Read switches into r10
+  andi r10, r10, 0b1       # Mask to get only SW0 (bit 0)
+
+  # Check if key1 is currently pressed (active low)
+  # If r9 == 0, key is pressed (since active low)
+
+  # Compare current button state with previous
+  beq r9, r8, skip_change   # If button state hasn't changed, skip
+
+  # Button state changed
+  # Check if button was just released (previous was 0, current is not 0)
+  bne r9, r0, button_released  # If r9 != 0, button was released
+
+  # Button was pressed (r9 == 0)
+  # Store that button is now pressed
+  mov r8, r9               # Update previous state to pressed
+
+  # Check SW0 to decide increment or decrement
+  beq r10, r0, decrement   # If SW0 == 0, decrement
+
+  # SW0 == 1, so increment
+increment:
+  # Check if already at 9
+  movi r11, 9
+  beq r5, r11, skip_increment
+
+  # Increment the value
+  addi r5, r5, 1
+  br update_display
+
+decrement:
+  # Check if already at 0
+  beq r5, r0, skip_increment
+
+  # Decrement the value
+  subi r5, r5, 1
+
+update_display:
+  # Convert digit to 7-segment pattern
+  # Use a jump table approach
+  mov r12, r5              # Copy digit to r12
+  movi r13, 10             # Set limit for bounds check
+
+  # Multiply by 4 to get word offset (each address is 4 bytes)
+  slli r12, r12, 2
+
+  # Jump to appropriate display code based on digit
+  movia r14, display_jump_table
+  add r14, r14, r12
+  ldw r14, 0(r14)
+  jmp r14
+
+display_0:
+  movi r6, SEG_0
+  br display_done
+display_1:
+  movi r6, SEG_1
+  br display_done
+display_2:
+  movi r6, SEG_2
+  br display_done
+display_3:
+  movi r6, SEG_3
+  br display_done
+display_4:
+  movi r6, SEG_4
+  br display_done
+display_5:
+  movi r6, SEG_5
+  br display_done
+display_6:
+  movi r6, SEG_6
+  br display_done
+display_7:
+  movi r6, SEG_7
+  br display_done
+display_8:
+  movi r6, SEG_8
+  br display_done
+display_9:
+  movi r6, SEG_9
+  br display_done
+
+display_done:
+  # Update the display
+  stbio r6, 0(r4)
+
+skip_increment:
+  br main_loop
+
+button_released:
+  # Button was released, update previous state
+  mov r8, r9               # Update previous state to released
+  br main_loop
+
+skip_change:
+  # Button state hasn't changed, just continue
+  br main_loop
+
+# Jump table for display patterns
+.data
+.align 2
+display_jump_table:
+  .word display_0
+  .word display_1
+  .word display_2
+  .word display_3
+  .word display_4
+  .word display_5
+  .word display_6
+  .word display_7
+  .word display_8
+  .word display_9

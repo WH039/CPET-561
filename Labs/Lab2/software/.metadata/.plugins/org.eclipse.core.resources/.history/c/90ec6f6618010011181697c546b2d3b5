@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------
+# Assembly language program that reads data from the switches
+# and displays it on the LEDs.
+# ---------------------------------------------------------------
+
+.text
+
+# define a macro to move a 32 bit address to a register
+
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+# define constants
+.equ switches, 0x11020    #find the base address of Switches in the system.h file
+.equ pushbuttons, 0x11010    #find the base address of Switches in the system.h file
+.equ HEX0, 0x11000    #find the base address of Switches in the system.h file
+
+# 7-segment display patterns (active-low, assuming common anode)
+# Bits: gfedcba (7 segments)
+
+.equ SEG_0, 0b1000000    # Pattern for '0' (segments a,b,c,d,e,f)
+.equ SEG_1, 0b1111001    # Pattern for '1' (segments b,c)
+.equ SEG_2, 0b0100100    # Pattern for '2' (segments a,b,d,e,g)
+.equ SEG_3, 0b0110000    # Pattern for '3' (segments a,b,c,d,g)
+.equ SEG_4, 0b0011001    # Pattern for '4' (segments b,c,f,g)
+.equ SEG_5, 0b0010010    # Pattern for '5' (segments a,c,d,f,g)
+.equ SEG_6, 0b0000010    # Pattern for '6' (segments a,c,d,e,f,g)
+.equ SEG_7, 0b1111000    # Pattern for '7' (segments a,b,c)
+.equ SEG_8, 0b0000000    # Pattern for '8' (all segments)
+.equ SEG_9, 0b0010000    # Pattern for '9' (segments a,b,c,d,f,g)
+
+
+#Define the main program
+.global main
+main:
+  movia r2, switches
+  movia r3, pushbuttons
+  movia r4, HEX0
+
+  movi r5, SEG_0
+  stbio r5, (0)r4
+
+loop:
+  ldbio r6, 0(r2)
+  ldbio r6, 0(r3)
+
+  stbio r5, (0)r4
+  br    loop
+
+
+
+

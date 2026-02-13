@@ -1,0 +1,46 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+USE ieee.std_logic_unsigned.all;
+
+entity Lab3 is
+  port
+  (
+  
+    CLOCK_50 : in std_logic;
+	 
+	 --input
+	 SW       : in std_logic_vector(7 downto 0);
+	 KEY      : in std_logic_vector(3 downto 0);
+	 
+	 --output
+	 LEDR     : out std_logic_vector(9 downto 0);
+	 HEX0     : out std_logic_vector(6 downto 0)
+	);
+end entity lab3;
+
+architecture lab3_arch of lab3 is
+  component nios_system is
+    port
+	 (
+	   clk_clk            : in  std_logic                    := 'X';             -- clk
+		reset_reset_n      : in  std_logic                    := 'X';             -- reset_n
+		switches_export    : in  std_logic_vector(7 downto 0) := (others => 'X'); -- export
+		leds_export        : out std_logic_vector(7 downto 0);                    -- export
+		hex0_export        : out std_logic_vector(6 downto 0);                    -- export
+		pushbuttons_export : in  std_logic_vector(3 downto 0) := (others => 'X')  -- export
+	  );
+  end component nios_system;
+  
+  BEGIN
+  
+  u0 : component nios_system
+    port map (
+		clk_clk            => CLOCK_50,            --         clk.clk
+		reset_reset_n      => KEY(0),      --       reset.reset_n
+		switches_export    => SW,    --    switches.export
+		leds_export        => LEDR(7 downto 0),        --        leds.export
+		hex0_export        => HEX0,        --        hex0.export
+		pushbuttons_export => KEY  -- pushbuttons.export
+		);
+end architecture led3_arch;

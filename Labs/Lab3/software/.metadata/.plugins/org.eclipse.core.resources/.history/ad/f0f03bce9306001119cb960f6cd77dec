@@ -1,0 +1,119 @@
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+#include "altera_avalon_timer_regs.h"
+#include "altera_avalon_timer.h"
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+// HEX values
+
+#define ZERO  0x40
+#define ONE   0x79
+#define TWO   0x24
+#define THREE 0x30
+#define FOUR  0x19
+#define FIVE  0x12
+#define SIX   0x02
+#define SEVEN 0x78
+#define EIGHT 0x00
+#define NINE  0x18
+
+
+//set up pointers to peripherals
+
+uint32* TimerPtr    	= (uint32*)TIMER_0_BASE;
+uint8* SwitchPtr       	= (uint8*)SWITCHES_BASE;
+uint8* PushButtonPtr   	= (uint8*)PUSHBUTTONS_BASE;
+uint8* hex0Ptr     		= (uint8*)HEX0_BASE;
+uint8* LedPtr      		= (uint8*)LEDS_BASE;
+
+void pushbtn_isr(void *context);
+#define EDGE_CAPTURE_REG_OFFSET 3
+
+volatile uint8 button;
+volatile uint8 sw0;
+uint8 display[10] = {ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE};
+uint8 check = 1;
+uint8 pos = 0;
+
+void pushbtn_isr(void *context){
+	*(PushButtonPtr + 3) = 0x00;
+	
+	sw0 = *SwitchPtr;
+    button = *PushButtonPtr;
+    sw0 = sw0 & 0x01;
+    button = button & 0x02;
+	
+	while(check == 1){
+        sw0 = *SwitchPtr;
+        button = *PushButtonPtr;
+        sw0 = sw0 & 0x01;
+  		button = button & 0x02;
+        while((button == 2) && (sw0 == 1) && (check == 1)){
+        	*LedPtr = 1;
+        	if(*hex0Ptr == display[9]){
+        		check = 0;
+			}
+			else{
+				pos = pos + 1;
+				*hex0Ptr = *(display + pos);
+				check = 0;
+			}
+		}
+
+        while((button == 2) && (sw0 == 0) && (check == 1)){
+        	*LedPtr = 1;
+            if(*hex0Ptr == display[0]){
+            	check = 0;
+        	}
+       		else{
+        		pos = pos - 1;
+       			*hex0Ptr = *(display + pos);
+   				check = 0;
+        	}
+        }
+    }
+    check = 1;
+    return;
+}
+
+void timer_isr(void *context)
+/*****************************************************************************/
+/* Interrupt Service Routine                                                 */
+/*   Determines what caused the interrupt and calls the appropriate          */
+/*  subroutine.                                                              */
+/*                                                                           */
+/*****************************************************************************/
+{
+    unsigned char current_val;
+
+    //clear timer interrupt
+    *TimerPtr = 0;
+
+    current_val = *LedPtr; /* read the leds */
+
+    *LedPtr = current_val + 1;  /* change the display */
+
+    return;
+}
+
+int main(void)
+{    
+    *hex0Ptr = *(display + pos);
+	*(PushButtonPtr + 2) = 0x02;
+
+    while(1){
+    	alt_ic_isr_register(PUSHBUTTONS_IRQ_INTERRUPT_CONTROLLER_ID, PUSHBUTTONS_IRQ, pushbtn_isr, 0, 0);
+    }
+    return 0;
+}
