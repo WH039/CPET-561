@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Tue Feb 17 04:08:14 2026
+Tue Feb 17 15:27:07 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,13 +48,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Feb 17 04:08:14 2026       ;
+; Analysis & Synthesis Status     ; Successful - Tue Feb 17 15:27:07 2026       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab4                                        ;
 ; Top-level Entity Name           ; lab4_top                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 98                                          ;
+; Total registers                 ; 100                                         ;
 ; Total pins                      ; 51                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -161,26 +161,26 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processors 2-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
-; src/lab4_top.vhd                 ; yes             ; User VHDL File  ; C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd         ;         ;
-; src/servo_controller.vhd         ; yes             ; User VHDL File  ; C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; src/lab4_top.vhd                 ; yes             ; User VHDL File  ; C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd         ;         ;
+; src/servo_controller.vhd         ; yes             ; User VHDL File  ; C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -188,25 +188,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 136            ;
+; Estimate of Logic utilization (ALMs needed) ; 141            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 210            ;
+; Combinational ALUT usage for logic          ; 216            ;
 ;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 59             ;
-;     -- 5 input functions                    ; 20             ;
-;     -- 4 input functions                    ; 16             ;
-;     -- <=3 input functions                  ; 114            ;
+;     -- 6 input functions                    ; 64             ;
+;     -- 5 input functions                    ; 14             ;
+;     -- 4 input functions                    ; 18             ;
+;     -- <=3 input functions                  ; 119            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 98             ;
+; Dedicated logic registers                   ; 100            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 51             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 98             ;
-; Total fan-out                               ; 1295           ;
-; Average fan-out                             ; 2.90           ;
+; Maximum fan-out                             ; 100            ;
+; Total fan-out                               ; 1324           ;
+; Average fan-out                             ; 2.92           ;
 +---------------------------------------------+----------------+
 
 
@@ -215,8 +215,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name      ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------+--------------+
-; |lab4_top                                   ; 210 (0)             ; 98 (3)                    ; 0                 ; 0          ; 51   ; 0            ; |lab4_top                                        ; lab4_top         ; work         ;
-;    |servo_controller:lab4_Servo_Controller| ; 210 (210)           ; 95 (95)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4_top|servo_controller:lab4_Servo_Controller ; servo_controller ; work         ;
+; |lab4_top                                   ; 216 (0)             ; 100 (3)                   ; 0                 ; 0          ; 51   ; 0            ; |lab4_top                                        ; lab4_top         ; work         ;
+;    |servo_controller:lab4_Servo_Controller| ; 216 (216)           ; 97 (97)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4_top|servo_controller:lab4_Servo_Controller ; servo_controller ; work         ;
 +---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -250,13 +250,13 @@ Encoding Type:  One-Hot
 ; servo_controller:lab4_Servo_Controller|current_bot_limit[0..3]                   ; Stuck at GND due to stuck port data_in                                   ;
 ; servo_controller:lab4_Servo_Controller|current_top_limit[1..4,6,8,11..14,17..31] ; Merged with servo_controller:lab4_Servo_Controller|current_top_limit[0]  ;
 ; servo_controller:lab4_Servo_Controller|current_top_limit[5,7,9,10,15]            ; Merged with servo_controller:lab4_Servo_Controller|current_top_limit[16] ;
-; servo_controller:lab4_Servo_Controller|top_angle_ctr[1,2]                        ; Merged with servo_controller:lab4_Servo_Controller|top_angle_ctr[0]      ;
-; servo_controller:lab4_Servo_Controller|bot_angle_ctr[1,2]                        ; Merged with servo_controller:lab4_Servo_Controller|bot_angle_ctr[0]      ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[1]                          ; Merged with servo_controller:lab4_Servo_Controller|top_angle_ctr[0]      ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[1]                          ; Merged with servo_controller:lab4_Servo_Controller|bot_angle_ctr[0]      ;
 ; servo_controller:lab4_Servo_Controller|current_top_limit[0]                      ; Stuck at GND due to stuck port data_in                                   ;
 ; servo_controller:lab4_Servo_Controller|current_top_limit[16]                     ; Stuck at VCC due to stuck port data_in                                   ;
 ; servo_controller:lab4_Servo_Controller|top_angle_ctr[0]                          ; Stuck at GND due to stuck port data_in                                   ;
 ; servo_controller:lab4_Servo_Controller|bot_angle_ctr[0]                          ; Stuck at GND due to stuck port data_in                                   ;
-; Total Number of Removed Registers = 70                                           ;                                                                          ;
+; Total Number of Removed Registers = 68                                           ;                                                                          ;
 +----------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 
@@ -275,12 +275,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 98    ;
+; Total registers                              ; 100   ;
 ; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 38    ;
-; Number of registers using Asynchronous Clear ; 94    ;
+; Number of registers using Synchronous Load   ; 40    ;
+; Number of registers using Asynchronous Clear ; 96    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Clock Enable       ; 56    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -295,13 +295,13 @@ Encoding Type:  One-Hot
 ; servo_controller:lab4_Servo_Controller|top_angle_ctr[8]  ; 4       ;
 ; servo_controller:lab4_Servo_Controller|top_angle_ctr[6]  ; 5       ;
 ; servo_controller:lab4_Servo_Controller|top_angle_ctr[15] ; 6       ;
-; servo_controller:lab4_Servo_Controller|bot_angle_ctr[15] ; 6       ;
-; servo_controller:lab4_Servo_Controller|bot_angle_ctr[9]  ; 6       ;
 ; servo_controller:lab4_Servo_Controller|bot_angle_ctr[7]  ; 5       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[9]  ; 6       ;
 ; servo_controller:lab4_Servo_Controller|bot_angle_ctr[5]  ; 5       ;
 ; servo_controller:lab4_Servo_Controller|bot_angle_ctr[10] ; 6       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[15] ; 6       ;
 ; servo_controller:lab4_Servo_Controller|bot_angle_ctr[16] ; 6       ;
-; servo_controller:lab4_Servo_Controller|top_angle_ctr[4]  ; 3       ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[4]  ; 4       ;
 ; Total number of inverted registers = 12                  ;         ;
 +----------------------------------------------------------+---------+
 
@@ -311,10 +311,10 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|bot_angle_ctr[11] ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|top_angle_ctr[25] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|bot_angle_ctr[15] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|top_angle_ctr[6]  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|bot_angle_ctr[11] ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|top_angle_ctr[25] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|bot_angle_ctr[9]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|top_angle_ctr[4]  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |lab4_top|servo_controller:lab4_Servo_Controller|Selector1         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
@@ -343,31 +343,31 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 98                          ;
+; arriav_ff             ; 100                         ;
 ;     CLR               ; 9                           ;
 ;     CLR SCLR          ; 32                          ;
 ;     ENA               ; 1                           ;
 ;     ENA CLR           ; 15                          ;
-;     ENA CLR SLD       ; 38                          ;
+;     ENA CLR SLD       ; 40                          ;
 ;     plain             ; 3                           ;
 ; arriav_io_obuf        ; 36                          ;
-; arriav_lcell_comb     ; 211                         ;
-;     arith             ; 90                          ;
-;         1 data inputs ; 90                          ;
+; arriav_lcell_comb     ; 217                         ;
+;     arith             ; 92                          ;
+;         1 data inputs ; 92                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 120                         ;
+;     normal            ; 124                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 18                          ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 20                          ;
-;         6 data inputs ; 59                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 64                          ;
 ; boundary_port         ; 51                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.33                        ;
+; Average LUT depth     ; 3.37                        ;
 +-----------------------+-----------------------------+
 
 
@@ -386,105 +386,103 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Feb 17 04:08:03 2026
+    Info: Processing started: Tue Feb 17 15:26:59 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file src/lab4_top.vhd
-    Info (12022): Found design unit 1: lab4_top-rtl File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 15
-    Info (12023): Found entity 1: lab4_top File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 6
+    Info (12022): Found design unit 1: lab4_top-rtl File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 15
+    Info (12023): Found entity 1: lab4_top File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file src/servo_controller.vhd
-    Info (12022): Found design unit 1: servo_controller-servo_controller_arch File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 18
-    Info (12023): Found entity 1: servo_controller File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 6
+    Info (12022): Found design unit 1: servo_controller-servo_controller_arch File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 18
+    Info (12023): Found entity 1: servo_controller File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 6
 Info (12127): Elaborating entity "lab4_top" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(22): used explicit default value for signal "Write_En" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 22
-Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(23): used explicit default value for signal "Address_0" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 23
-Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(24): used explicit default value for signal "Write_Data" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 24
-Warning (10873): Using initial value X (don't care) for net "LEDR[8..0]" at lab4_top.vhd(10) File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-Info (12128): Elaborating entity "servo_controller" for hierarchy "servo_controller:lab4_Servo_Controller" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 52
+Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(24): used explicit default value for signal "Write_Data" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 24
+Warning (10873): Using initial value X (don't care) for net "LEDR[8..0]" at lab4_top.vhd(10) File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+Info (12128): Elaborating entity "servo_controller" for hierarchy "servo_controller:lab4_Servo_Controller" File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 52
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver. File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver. File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
-    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GPIO_0[10]~synth" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13010): Node "GPIO_0[10]~synth" File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[16] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[14] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[10] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[8] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[7] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[6] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[5] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[16] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[14] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[10] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[8] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[7] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[6] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[5] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[4] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
-    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[4] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[16] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[14] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[10] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[8] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[7] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[6] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[5] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[16] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[14] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[10] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[8] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[7] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[6] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[5] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[4] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[4] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
-Info (21057): Implemented 265 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
+Info (21057): Implemented 271 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 214 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
-    Info: Peak virtual memory: 4919 megabytes
-    Info: Processing ended: Tue Feb 17 04:08:14 2026
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:21
+    Info (21061): Implemented 220 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 4918 megabytes
+    Info: Processing ended: Tue Feb 17 15:27:07 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:16
 
 

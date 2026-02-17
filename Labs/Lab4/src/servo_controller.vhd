@@ -138,11 +138,11 @@ begin
         
             if period_ctr = PERIOD then 
                 if top_angle_ctr < current_top_limit then
-                    --top_angle_ctr <= top_angle_ctr + x"000001f4";
-                    top_angle_ctr <= top_angle_ctr + x"00001388";
+                    top_angle_ctr <= top_angle_ctr + x"000001f4";
+                    --top_angle_ctr <= top_angle_ctr + x"00001388";
                 elsif bot_angle_ctr > current_bot_limit then
-                    --bot_angle_ctr <= bot_angle_ctr + x"000001f4";
-                    bot_angle_ctr <= bot_angle_ctr - x"00001388";
+                    bot_angle_ctr <= bot_angle_ctr - x"000001f4";
+                    --bot_angle_ctr <= bot_angle_ctr - x"00001388";
                 end if;
             end if;
         end if;

@@ -53,9 +53,9 @@ BEGIN
   Port Map (
             clk         => CLOCK_50, 
             reset_n     => Reset_n,
-            write       => Write_En, 
+            write       => '1', 
             write_data   => Write_Data, 
-            address_bit => Address_0,
+            address_bit => "00",
             pwm_out    => GPIO_0(10),
             irq         => LEDR(9)
   );
