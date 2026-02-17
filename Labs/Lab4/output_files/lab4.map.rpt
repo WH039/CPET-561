@@ -1,0 +1,490 @@
+Analysis & Synthesis report for lab4
+Tue Feb 17 04:08:14 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |lab4_top|servo_controller:lab4_Servo_Controller|current_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "servo_controller:lab4_Servo_Controller"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Feb 17 04:08:14 2026       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; lab4                                        ;
+; Top-level Entity Name           ; lab4_top                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 98                                          ;
+; Total pins                      ; 51                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; lab4_top           ; lab4               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; src/lab4_top.vhd                 ; yes             ; User VHDL File  ; C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd         ;         ;
+; src/servo_controller.vhd         ; yes             ; User VHDL File  ; C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 136            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 210            ;
+;     -- 7 input functions                    ; 1              ;
+;     -- 6 input functions                    ; 59             ;
+;     -- 5 input functions                    ; 20             ;
+;     -- 4 input functions                    ; 16             ;
+;     -- <=3 input functions                  ; 114            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 98             ;
+;                                             ;                ;
+; I/O pins                                    ; 51             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 98             ;
+; Total fan-out                               ; 1295           ;
+; Average fan-out                             ; 2.90           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name      ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------+--------------+
+; |lab4_top                                   ; 210 (0)             ; 98 (3)                    ; 0                 ; 0          ; 51   ; 0            ; |lab4_top                                        ; lab4_top         ; work         ;
+;    |servo_controller:lab4_Servo_Controller| ; 210 (210)           ; 95 (95)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4_top|servo_controller:lab4_Servo_Controller ; servo_controller ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lab4_top|servo_controller:lab4_Servo_Controller|current_state                                                      ;
++---------------------------+------------------------+--------------------------+-------------------------+---------------------------+
+; Name                      ; current_state.INT_LEFT ; current_state.SWEEP_LEFT ; current_state.INT_RIGHT ; current_state.SWEEP_RIGHT ;
++---------------------------+------------------------+--------------------------+-------------------------+---------------------------+
+; current_state.SWEEP_RIGHT ; 0                      ; 0                        ; 0                       ; 0                         ;
+; current_state.INT_RIGHT   ; 0                      ; 0                        ; 1                       ; 1                         ;
+; current_state.SWEEP_LEFT  ; 0                      ; 1                        ; 0                       ; 1                         ;
+; current_state.INT_LEFT    ; 1                      ; 0                        ; 0                       ; 1                         ;
++---------------------------+------------------------+--------------------------+-------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                          ;
++----------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+; Register name                                                                    ; Reason for Removal                                                       ;
++----------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+; servo_controller:lab4_Servo_Controller|current_bot_limit[16..31]                 ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[14,15]                  ; Stuck at VCC due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[10..13]                 ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[8,9]                    ; Stuck at VCC due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[7]                      ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[6]                      ; Stuck at VCC due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[5]                      ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[4]                      ; Stuck at VCC due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_bot_limit[0..3]                   ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_top_limit[1..4,6,8,11..14,17..31] ; Merged with servo_controller:lab4_Servo_Controller|current_top_limit[0]  ;
+; servo_controller:lab4_Servo_Controller|current_top_limit[5,7,9,10,15]            ; Merged with servo_controller:lab4_Servo_Controller|current_top_limit[16] ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[1,2]                        ; Merged with servo_controller:lab4_Servo_Controller|top_angle_ctr[0]      ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[1,2]                        ; Merged with servo_controller:lab4_Servo_Controller|bot_angle_ctr[0]      ;
+; servo_controller:lab4_Servo_Controller|current_top_limit[0]                      ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|current_top_limit[16]                     ; Stuck at VCC due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[0]                          ; Stuck at GND due to stuck port data_in                                   ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[0]                          ; Stuck at GND due to stuck port data_in                                   ;
+; Total Number of Removed Registers = 70                                           ;                                                                          ;
++----------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                        ;
++--------------------------------------------------------------+---------------------------+---------------------------------------------------------+
+; Register name                                                ; Reason for Removal        ; Registers Removed due to This Register                  ;
++--------------------------------------------------------------+---------------------------+---------------------------------------------------------+
+; servo_controller:lab4_Servo_Controller|current_bot_limit[31] ; Stuck at GND              ; servo_controller:lab4_Servo_Controller|bot_angle_ctr[0] ;
+;                                                              ; due to stuck port data_in ;                                                         ;
++--------------------------------------------------------------+---------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 98    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 38    ;
+; Number of registers using Asynchronous Clear ; 94    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------+
+; Inverted Register Statistics                                       ;
++----------------------------------------------------------+---------+
+; Inverted Register                                        ; Fan out ;
++----------------------------------------------------------+---------+
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[14] ; 6       ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[9]  ; 5       ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[8]  ; 4       ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[6]  ; 5       ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[15] ; 6       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[15] ; 6       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[9]  ; 6       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[7]  ; 5       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[5]  ; 5       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[10] ; 6       ;
+; servo_controller:lab4_Servo_Controller|bot_angle_ctr[16] ; 6       ;
+; servo_controller:lab4_Servo_Controller|top_angle_ctr[4]  ; 3       ;
+; Total number of inverted registers = 12                  ;         ;
++----------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|bot_angle_ctr[11] ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|top_angle_ctr[25] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|bot_angle_ctr[15] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab4_top|servo_controller:lab4_Servo_Controller|top_angle_ctr[6]  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |lab4_top|servo_controller:lab4_Servo_Controller|Selector1         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "servo_controller:lab4_Servo_Controller" ;
++--------------------+-------+----------+----------------------------+
+; Port               ; Type  ; Severity ; Details                    ;
++--------------------+-------+----------+----------------------------+
+; write              ; Input ; Info     ; Stuck at VCC               ;
+; write_data[15..14] ; Input ; Info     ; Stuck at VCC               ;
+; write_data[9..8]   ; Input ; Info     ; Stuck at VCC               ;
+; write_data[31..16] ; Input ; Info     ; Stuck at GND               ;
+; write_data[13..10] ; Input ; Info     ; Stuck at GND               ;
+; write_data[3..0]   ; Input ; Info     ; Stuck at GND               ;
+; write_data[7]      ; Input ; Info     ; Stuck at GND               ;
+; write_data[6]      ; Input ; Info     ; Stuck at VCC               ;
+; write_data[5]      ; Input ; Info     ; Stuck at GND               ;
+; write_data[4]      ; Input ; Info     ; Stuck at VCC               ;
+; address_bit        ; Input ; Info     ; Stuck at GND               ;
++--------------------+-------+----------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 98                          ;
+;     CLR               ; 9                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 15                          ;
+;     ENA CLR SLD       ; 38                          ;
+;     plain             ; 3                           ;
+; arriav_io_obuf        ; 36                          ;
+; arriav_lcell_comb     ; 211                         ;
+;     arith             ; 90                          ;
+;         1 data inputs ; 90                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 120                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 16                          ;
+;         5 data inputs ; 20                          ;
+;         6 data inputs ; 59                          ;
+; boundary_port         ; 51                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.33                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Feb 17 04:08:03 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src/lab4_top.vhd
+    Info (12022): Found design unit 1: lab4_top-rtl File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 15
+    Info (12023): Found entity 1: lab4_top File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file src/servo_controller.vhd
+    Info (12022): Found design unit 1: servo_controller-servo_controller_arch File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 18
+    Info (12023): Found entity 1: servo_controller File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 6
+Info (12127): Elaborating entity "lab4_top" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(22): used explicit default value for signal "Write_En" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 22
+Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(23): used explicit default value for signal "Address_0" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 23
+Warning (10540): VHDL Signal Declaration warning at lab4_top.vhd(24): used explicit default value for signal "Write_Data" because signal was never assigned a value File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 24
+Warning (10873): Using initial value X (don't care) for net "LEDR[8..0]" at lab4_top.vhd(10) File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+Info (12128): Elaborating entity "servo_controller" for hierarchy "servo_controller:lab4_Servo_Controller" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 52
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver. File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[10]~synth" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 11
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[16] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[14] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[10] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[8] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[7] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[6] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[5] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[16] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[14] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[10] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[8] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[7] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[6] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[5] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|bot_angle_ctr[4] will power up to Low File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+    Critical Warning (18010): Register servo_controller:lab4_Servo_Controller|top_angle_ctr[4] will power up to High File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/servo_controller.vhd Line: 106
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab4/src/lab4_top.vhd Line: 9
+Info (21057): Implemented 265 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21060): Implemented 36 bidirectional pins
+    Info (21061): Implemented 214 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 4919 megabytes
+    Info: Processing ended: Tue Feb 17 04:08:14 2026
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:21
+
+
