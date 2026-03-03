@@ -1,5 +1,5 @@
 Flow report for lab4
-Tue Feb 17 15:28:14 2026
+Tue Mar 03 04:42:44 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Feb 17 15:28:09 2026       ;
+; Flow Status                     ; Successful - Tue Mar 03 04:42:30 2026       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab4                                        ;
-; Top-level Entity Name           ; lab4_top                                    ;
+; Top-level Entity Name           ; lab5                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 139 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 164                                         ;
-; Total pins                      ; 51 / 457 ( 11 % )                           ;
+; Logic utilization (in ALMs)     ; 921 / 32,070 ( 3 % )                        ;
+; Total registers                 ; 1248                                        ;
+; Total pins                      ; 94 / 457 ( 21 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
+; Total block memory bits         ; 273,408 / 4,065,280 ( 7 % )                 ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,30 +67,37 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/17/2026 15:26:59 ;
+; Start date & time ; 03/03/2026 04:39:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab4                ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 154724017469461.177136001912644        ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; lab4_top    ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; lab4_top    ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; lab4_top    ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; lab4_top                               ; lab4          ; --          ; --         ;
-; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --          ; --         ;
-; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                               ;
++-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 237901789573889.177253074405628                               ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
+; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; nios_system/synthesis/../../nios_system.qsys                  ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                        ; --            ; lab5        ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                        ; --            ; lab5        ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                        ; --            ; lab5        ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                           ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --          ; --         ;
+; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --          ; --         ;
+; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --          ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1772529272 ; --            ; nios_system ; --         ;
+; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; lab5                                                          ; lab4          ; --          ; --         ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                                                     ; VHDL_1993     ; --          ; --         ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                                           ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -98,11 +105,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4918 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:55     ; 1.0                     ; 7692 MB             ; 00:05:37                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4834 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.4                     ; 5265 MB             ; 00:00:05                           ;
-; Total                ; 00:01:12     ; --                      ; --                  ; 00:06:02                           ;
+; Analysis & Synthesis ; 00:00:38     ; 1.0                     ; 5075 MB             ; 00:00:54                           ;
+; Fitter               ; 00:02:29     ; 1.1                     ; 7930 MB             ; 00:14:38                           ;
+; Assembler            ; 00:00:10     ; 1.0                     ; 4887 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:13     ; 1.9                     ; 5368 MB             ; 00:00:19                           ;
+; Total                ; 00:03:30     ; --                      ; --                  ; 00:15:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,10 +118,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
