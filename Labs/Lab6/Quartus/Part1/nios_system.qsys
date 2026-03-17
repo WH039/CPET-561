@@ -43,11 +43,6 @@
    }
    element inferred_ram.avalon_slave_0
    {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
       datum baseAddress
       {
          value = "0";

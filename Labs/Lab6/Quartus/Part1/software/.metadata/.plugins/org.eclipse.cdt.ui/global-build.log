@@ -1,38 +1,4 @@
-13:06:52 **** Build of configuration Nios II for project Lab6_Part2_APP ****
-make all 
-Info: Building ../Lab6_Part2_APP_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
-[BSP build complete]
-Info: Compiling Lab6_Part2.c to obj/default/Lab6_Part2.o
-nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part2_APP_bsp//HAL/inc -I../Lab6_Part2_APP_bsp/ -I../Lab6_Part2_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part2.o Lab6_Part2.c
-Lab6_Part2.c: In function 'main':
-Lab6_Part2.c:81:22: warning: passing argument 1 of 'ram_test_uint16' from incompatible pointer type [-Wincompatible-pointer-types]
-      ram_test_uint16((uint16*)ram_ptr,(uint32)ram_size,(uint16)0xDCBA);
-                      ^
-Lab6_Part2.c:41:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint16 * {aka short unsigned int *}'
- void ram_test_uint16(uint32 * start_ptr, uint32 size, uint16 data){
-      ^
-Lab6_Part2.c:82:22: warning: passing argument 1 of 'ram_test_uint8' from incompatible pointer type [-Wincompatible-pointer-types]
-      ram_test_uint8 ((uint8 *)ram_ptr,(uint32)ram_size,(uint8 )0xFE);
-                      ^
-Lab6_Part2.c:58:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint8 * {aka unsigned char *}'
- void ram_test_uint8(uint32 * start_ptr, uint32 size, uint8 data){
-      ^
-Info: Linking Lab6_Part2_APP.elf
-nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
-nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773764561 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
-Info: (Lab6_Part2_APP.elf) 6248 Bytes program size (code + initialized data).
-Info:                      9404 Bytes free for stack + heap.
-Info: Creating Lab6_Part2_APP.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
-[Lab6_Part2_APP build complete]
-13:07:05 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
-make all 
-Info: Building ../Lab6_Part2_APP_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
-[BSP build complete]
-[Lab6_Part2_APP build complete]
-13:12:32 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+14:37:45 **** Build of configuration Nios II for project Lab6_Part2_APP ****
 make all 
 Info: Building ../Lab6_Part2_APP_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
@@ -54,9 +20,141 @@ Lab6_Part2.c:60:6: note: expected 'uint32 * {aka long unsigned int *}' but argum
       ^
 Info: Linking Lab6_Part2_APP.elf
 nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
-nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773764561 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
+nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773771334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
 Info: (Lab6_Part2_APP.elf) 6248 Bytes program size (code + initialized data).
 Info:                      9404 Bytes free for stack + heap.
 Info: Creating Lab6_Part2_APP.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
+[Lab6_Part2_APP build complete]
+14:38:11 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+[Lab6_Part2_APP build complete]
+14:39:16 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part2.c to obj/default/Lab6_Part2.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part2_APP_bsp//HAL/inc -I../Lab6_Part2_APP_bsp/ -I../Lab6_Part2_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part2.o Lab6_Part2.c
+Lab6_Part2.c: In function 'main':
+Lab6_Part2.c:84:22: warning: passing argument 1 of 'ram_test_uint16' from incompatible pointer type [-Wincompatible-pointer-types]
+      ram_test_uint16((uint16*)ram_ptr,(uint32)ram_size,(uint16)0xDCBA);
+                      ^
+Lab6_Part2.c:42:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint16 * {aka short unsigned int *}'
+ void ram_test_uint16(uint32 * start_ptr, uint32 size, uint16 data){
+      ^
+Lab6_Part2.c:85:22: warning: passing argument 1 of 'ram_test_uint8' from incompatible pointer type [-Wincompatible-pointer-types]
+      ram_test_uint8 ((uint8 *)ram_ptr,(uint32)ram_size,(uint8 )0xFE);
+                      ^
+Lab6_Part2.c:60:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint8 * {aka unsigned char *}'
+ void ram_test_uint8(uint32 * start_ptr, uint32 size, uint8 data){
+      ^
+Info: Linking Lab6_Part2_APP.elf
+nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773771334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part2_APP.elf) 6224 Bytes program size (code + initialized data).
+Info:                      9428 Bytes free for stack + heap.
+Info: Creating Lab6_Part2_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
+[Lab6_Part2_APP build complete]
+15:10:31 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part2.c to obj/default/Lab6_Part2.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part2_APP_bsp//HAL/inc -I../Lab6_Part2_APP_bsp/ -I../Lab6_Part2_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part2.o Lab6_Part2.c
+Lab6_Part2.c: In function 'main':
+Lab6_Part2.c:84:22: warning: passing argument 1 of 'ram_test_uint16' from incompatible pointer type [-Wincompatible-pointer-types]
+      ram_test_uint16((uint16*)ram_ptr,(uint32)ram_size,(uint16)0xDCBA);
+                      ^
+Lab6_Part2.c:42:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint16 * {aka short unsigned int *}'
+ void ram_test_uint16(uint32 * start_ptr, uint32 size, uint16 data){
+      ^
+Lab6_Part2.c:85:22: warning: passing argument 1 of 'ram_test_uint8' from incompatible pointer type [-Wincompatible-pointer-types]
+      ram_test_uint8 ((uint8 *)ram_ptr,(uint32)ram_size,(uint8 )0xFE);
+                      ^
+Lab6_Part2.c:60:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint8 * {aka unsigned char *}'
+ void ram_test_uint8(uint32 * start_ptr, uint32 size, uint8 data){
+      ^
+Info: Linking Lab6_Part2_APP.elf
+nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773771334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part2_APP.elf) 6224 Bytes program size (code + initialized data).
+Info:                      9428 Bytes free for stack + heap.
+Info: Creating Lab6_Part2_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
+[Lab6_Part2_APP build complete]
+15:10:55 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+[Lab6_Part2_APP build complete]
+15:16:42 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part2.c to obj/default/Lab6_Part2.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part2_APP_bsp//HAL/inc -I../Lab6_Part2_APP_bsp/ -I../Lab6_Part2_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part2.o Lab6_Part2.c
+Info: Linking Lab6_Part2_APP.elf
+nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773771334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part2_APP.elf) 6208 Bytes program size (code + initialized data).
+Info:                      9444 Bytes free for stack + heap.
+Info: Creating Lab6_Part2_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
+[Lab6_Part2_APP build complete]
+15:21:12 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part2.c to obj/default/Lab6_Part2.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part2_APP_bsp//HAL/inc -I../Lab6_Part2_APP_bsp/ -I../Lab6_Part2_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part2.o Lab6_Part2.c
+Lab6_Part2.c: In function 'main':
+Lab6_Part2.c:84:22: warning: passing argument 1 of 'ram_test_uint16' from incompatible pointer type [-Wincompatible-pointer-types]
+      ram_test_uint16((uint16*)ram_ptr,(uint32)ram_size,(uint16)data_32);
+                      ^
+Lab6_Part2.c:42:6: note: expected 'uint32 * {aka long unsigned int *}' but argument is of type 'uint16 * {aka short unsigned int *}'
+ void ram_test_uint16(uint32 * start_ptr, uint32 size, uint16 data){
+      ^
+Info: Linking Lab6_Part2_APP.elf
+nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773771334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part2_APP.elf) 6204 Bytes program size (code + initialized data).
+Info:                      9448 Bytes free for stack + heap.
+Info: Creating Lab6_Part2_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
+[Lab6_Part2_APP build complete]
+15:23:02 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+[Lab6_Part2_APP build complete]
+15:24:29 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part2.c to obj/default/Lab6_Part2.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part2_APP_bsp//HAL/inc -I../Lab6_Part2_APP_bsp/ -I../Lab6_Part2_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part2.o Lab6_Part2.c
+Info: Linking Lab6_Part2_APP.elf
+nios2-elf-g++  -T'../Lab6_Part2_APP_bsp//linker.x' -msys-crt0='../Lab6_Part2_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part2_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part2_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part2_APP.elf obj/default/Lab6_Part2.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part2_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1773771334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/Part1/software/Lab6_Part2_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part2_APP.elf) 6208 Bytes program size (code + initialized data).
+Info:                      9444 Bytes free for stack + heap.
+Info: Creating Lab6_Part2_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part2_APP.elf >Lab6_Part2_APP.objdump
+[Lab6_Part2_APP build complete]
+15:25:00 **** Incremental Build of configuration Nios II for project Lab6_Part2_APP ****
+make all 
+Info: Building ../Lab6_Part2_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part2_APP_bsp/
+[BSP build complete]
 [Lab6_Part2_APP build complete]
