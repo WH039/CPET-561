@@ -9,8 +9,7 @@ module nios_system (
 	pushbuttons_export,
 	reset_reset_n,
 	switches_export,
-	address_bit_address,
-	pwm_writeresponsevalid_n);	
+	servo_pwm_writeresponsevalid_n);	
 
 	input		clk_clk;
 	output	[6:0]	hex0_export;
@@ -21,6 +20,5 @@ module nios_system (
 	input	[3:0]	pushbuttons_export;
 	input		reset_reset_n;
 	input	[7:0]	switches_export;
-	input	[1:0]	address_bit_address;
-	output		pwm_writeresponsevalid_n;
+	output		servo_pwm_writeresponsevalid_n;
 endmodule

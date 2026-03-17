@@ -1,0 +1,18 @@
+16:29:35 **** Incremental Build of configuration Nios II for project lab5 ****
+make all 
+Info: Building ../lab5_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab5_bsp/
+[BSP build complete]
+Info: Compiling lab5.c to obj/default/lab5.o
+nios2-elf-gcc -xc -MP -MMD -c -I../lab5_bsp//HAL/inc -I../lab5_bsp/ -I../lab5_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab5.o lab5.c
+Info: Linking lab5.elf
+nios2-elf-g++  -T'../lab5_bsp//linker.x' -msys-crt0='../lab5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab5_bsp/   -Wl,-Map=lab5.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab5.elf obj/default/lab5.o -lm -msys-lib=m
+nios2-elf-insert lab5.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 5 --sidp 0x11070 --timestamp 1772570258 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4" --jdi ../..//output_files/lab4.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab4/software/lab5_bsp/../../nios_system.sopcinfo
+Info: (lab5.elf) 16 KBytes program size (code + initialized data).
+Info:            10160 Bytes free for stack + heap.
+Info: Creating lab5.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source lab5.elf >lab5.objdump
+[lab5 build complete]
+
+16:29:36 Build Finished (took 1s.45ms)
+

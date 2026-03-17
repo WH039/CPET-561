@@ -7,7 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
- <window width="2560" height="1440" x="0" y="0" />
+ <library expandedCategories="Project,Project/ESDI_IP,Library" />
+ <window width="1920" height="1080" x="0" y="0" />
  <generation synthesis="VHDL" />
 </preferences>

@@ -1,5 +1,5 @@
 Flow report for lab4
-Tue Mar 03 04:42:44 2026
+Tue Mar 03 16:07:16 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Mar 03 04:42:30 2026       ;
+; Flow Status                     ; Successful - Tue Mar 03 16:07:09 2026       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab4                                        ;
 ; Top-level Entity Name           ; lab5                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 921 / 32,070 ( 3 % )                        ;
-; Total registers                 ; 1248                                        ;
+; Logic utilization (in ALMs)     ; 968 / 32,070 ( 3 % )                        ;
+; Total registers                 ; 1291                                        ;
 ; Total pins                      ; 94 / 457 ( 21 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 273,408 / 4,065,280 ( 7 % )                 ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/03/2026 04:39:05 ;
+; Start date & time ; 03/03/2026 16:04:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab4                ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 237901789573889.177253074405628                               ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 198208557452615.177257184610632                               ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
@@ -91,7 +91,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1772529272 ; --            ; nios_system ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1772570258 ; --            ; nios_system ; --         ;
 ; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --          ; --         ;
 ; TOP_LEVEL_ENTITY                    ; lab5                                                          ; lab4          ; --          ; --         ;
@@ -105,11 +105,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:38     ; 1.0                     ; 5075 MB             ; 00:00:54                           ;
-; Fitter               ; 00:02:29     ; 1.1                     ; 7930 MB             ; 00:14:38                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 4887 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:13     ; 1.9                     ; 5368 MB             ; 00:00:19                           ;
-; Total                ; 00:03:30     ; --                      ; --                  ; 00:15:58                           ;
+; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 5058 MB             ; 00:00:37                           ;
+; Fitter               ; 00:02:31     ; 1.1                     ; 7620 MB             ; 00:17:18                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4878 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:06     ; 2.5                     ; 5347 MB             ; 00:00:12                           ;
+; Total                ; 00:03:04     ; --                      ; --                  ; 00:18:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,10 +118,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-V9IBPCU  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-ABETS8U  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

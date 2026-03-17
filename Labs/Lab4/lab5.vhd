@@ -14,7 +14,7 @@ ENTITY lab5 IS
 		HEX4             : out std_logic_vector( 6 downto 0);
 		HEX5             : out std_logic_vector( 6 downto 0);
       LEDR             : out  std_logic_vector(9 downto 0);
-      GPIO_0           : inout  std_logic_vector(35 downto 0)  
+      GPIO_0           : out  std_logic_vector(35 downto 0)  
   );
 End ENTITY lab5;
 
@@ -31,45 +31,25 @@ ARCHITECTURE rtl of lab5 IS
 			pushbuttons_export       : in  std_logic_vector(3 downto 0) := (others => 'X'); -- export
 			reset_reset_n            : in  std_logic                    := 'X';             -- reset_n
 			switches_export          : in  std_logic_vector(7 downto 0) := (others => 'X'); -- export
-			address_bit_address      : in  std_logic_vector(1 downto 0) := (others => 'X'); -- address
-			pwm_writeresponsevalid_n : out std_logic                                        -- writeresponsevalid_n
+			servo_pwm_writeresponsevalid_n : out std_logic                                        -- writeresponsevalid_n
 	);
 	end component nios_system;
 
   
   --Signal Declarations
   Signal Reset_n    : std_logic;
-  Signal Key0_D1    : std_logic;
-  Signal Key0_D2    : std_logic;
-  Signal Key0_D3    : std_logic;
-  Signal Write_En   : std_logic := '1'; --Signal set to all continuous sweep of servo
-  Signal Address_0  : std_logic_vector(1 downto 0) := "00"; --Signal to access register 0
-  Signal Write_Data : std_logic_vector(31 downto 0) := x"0000C350"; --50,000 (Min Angle Value)
-
-  --Component Declaration for Servo Controller
-  Component Servo_Controller IS
-    Port (
-          clk         : IN  STD_LOGIC;
-          reset_n     : IN  STD_LOGIC;
-          write       : IN  STD_LOGIC;
-          write_data   : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-          address_bit : IN  STD_LOGIC_VECTOR(1 downto 0);
-          pwm_out    : OUT STD_LOGIC;
-          irq         : OUT STD_LOGIC  
-    );
-  End Component Servo_Controller;  
+  Signal Key_D1, Key_D2, Key_D3    : std_logic_vector(3 downto 0); 
   
   BEGIN
   ----- Syncronize the reset
   synchReset_proc : process (CLOCK_50) begin
     if (rising_edge(CLOCK_50)) then
-      Key0_D1 <= KEY(0);
-      Key0_D2 <= Key0_D1;
-      Key0_D3 <= Key0_D2;
+      Key_D1 <= KEY;
+      Key_D2 <= Key_D1;
+      Key_D3 <= Key_D2;
     end if;
     
   end process synchReset_proc;
-  Reset_n <= Key0_D3;
 
   --Port Map of nios_system
   
@@ -81,11 +61,10 @@ ARCHITECTURE rtl of lab5 IS
 			hex2_export              => HEX2,              --        hex2.export
 			hex4_export              => HEX4,              --        hex4.export
 			hex5_export              => HEX5,              --        hex5.export
-			pushbuttons_export       => KEY,       -- pushbuttons.export
-			reset_reset_n            => reset_n,            --       reset.reset_n
+			pushbuttons_export       => Key_D3,       -- pushbuttons.export
+			reset_reset_n            => Key_D3(0),            --       reset.reset_n
 			switches_export          => SW,          --    switches.export
-			address_bit_address      => Address_0,      -- address_bit.address
-			pwm_writeresponsevalid_n => GPIO_0(10)  --         pwm.writeresponsevalid_n
+			servo_pwm_writeresponsevalid_n => GPIO_0(10)  --         pwm.writeresponsevalid_n
 		);
 
 

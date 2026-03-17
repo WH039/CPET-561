@@ -69,8 +69,12 @@ module nios_system_mm_interconnect_0 (
 		output wire        onchip_memory2_0_s1_chipselect,                 //                                         .chipselect
 		output wire        onchip_memory2_0_s1_clken,                      //                                         .clken
 		output wire [1:0]  pushbuttons_s1_address,                         //                           pushbuttons_s1.address
+		output wire        pushbuttons_s1_write,                           //                                         .write
 		input  wire [31:0] pushbuttons_s1_readdata,                        //                                         .readdata
-		output wire        servo_controller_0_avalon_slave_0_write,        //        servo_controller_0_avalon_slave_0.write
+		output wire [31:0] pushbuttons_s1_writedata,                       //                                         .writedata
+		output wire        pushbuttons_s1_chipselect,                      //                                         .chipselect
+		output wire [1:0]  servo_controller_0_avalon_slave_0_address,      //        servo_controller_0_avalon_slave_0.address
+		output wire        servo_controller_0_avalon_slave_0_write,        //                                         .write
 		output wire [31:0] servo_controller_0_avalon_slave_0_writedata,    //                                         .writedata
 		output wire [1:0]  switches_s1_address,                            //                              switches_s1.address
 		input  wire [31:0] switches_s1_readdata,                           //                                         .readdata
@@ -1028,7 +1032,7 @@ module nios_system_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (1),
+		.AV_ADDRESS_W                   (2),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),
@@ -1067,9 +1071,9 @@ module nios_system_mm_interconnect_0 (
 		.uav_writedata          (servo_controller_0_avalon_slave_0_agent_m0_writedata),     //                         .writedata
 		.uav_lock               (servo_controller_0_avalon_slave_0_agent_m0_lock),          //                         .lock
 		.uav_debugaccess        (servo_controller_0_avalon_slave_0_agent_m0_debugaccess),   //                         .debugaccess
-		.av_write               (servo_controller_0_avalon_slave_0_write),                  //      avalon_anti_slave_0.write
+		.av_address             (servo_controller_0_avalon_slave_0_address),                //      avalon_anti_slave_0.address
+		.av_write               (servo_controller_0_avalon_slave_0_write),                  //                         .write
 		.av_writedata           (servo_controller_0_avalon_slave_0_writedata),              //                         .writedata
-		.av_address             (),                                                         //              (terminated)
 		.av_read                (),                                                         //              (terminated)
 		.av_readdata            (32'b11011110101011011101111010101101),                     //              (terminated)
 		.av_begintransfer       (),                                                         //              (terminated)
@@ -1388,10 +1392,11 @@ module nios_system_mm_interconnect_0 (
 		.uav_lock               (pushbuttons_s1_agent_m0_lock),                   //                         .lock
 		.uav_debugaccess        (pushbuttons_s1_agent_m0_debugaccess),            //                         .debugaccess
 		.av_address             (pushbuttons_s1_address),                         //      avalon_anti_slave_0.address
+		.av_write               (pushbuttons_s1_write),                           //                         .write
 		.av_readdata            (pushbuttons_s1_readdata),                        //                         .readdata
-		.av_write               (),                                               //              (terminated)
+		.av_writedata           (pushbuttons_s1_writedata),                       //                         .writedata
+		.av_chipselect          (pushbuttons_s1_chipselect),                      //                         .chipselect
 		.av_read                (),                                               //              (terminated)
-		.av_writedata           (),                                               //              (terminated)
 		.av_begintransfer       (),                                               //              (terminated)
 		.av_beginbursttransfer  (),                                               //              (terminated)
 		.av_burstcount          (),                                               //              (terminated)
@@ -1400,7 +1405,6 @@ module nios_system_mm_interconnect_0 (
 		.av_waitrequest         (1'b0),                                           //              (terminated)
 		.av_writebyteenable     (),                                               //              (terminated)
 		.av_lock                (),                                               //              (terminated)
-		.av_chipselect          (),                                               //              (terminated)
 		.av_clken               (),                                               //              (terminated)
 		.uav_clken              (1'b0),                                           //              (terminated)
 		.av_debugaccess         (),                                               //              (terminated)
