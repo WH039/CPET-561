@@ -1,0 +1,27 @@
+20:57:12 **** Incremental Build of configuration Nios II for project audio_demo2 ****
+make all 
+Info: Building ../audio_demo2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../audio_demo2_bsp/
+[BSP build complete]
+Info: Compiling audio_demo.c to obj/default/audio_demo.o
+nios2-elf-gcc -xc -MP -MMD -c -I../audio_demo2_bsp//HAL/inc -I../audio_demo2_bsp/ -I../audio_demo2_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/audio_demo.o audio_demo.c
+Info: Linking audio_demo2.elf
+nios2-elf-g++  -T'../audio_demo2_bsp//linker.x' -msys-crt0='../audio_demo2_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../audio_demo2_bsp/   -Wl,-Map=audio_demo2.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o audio_demo2.elf obj/default/audio_demo.o -lm -msys-lib=m
+nios2-elf-insert audio_demo2.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 1 --sidp 0x4021060 --timestamp 1774744857 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Demos/Audio_Demo/Audio_Demo_quartus" --jdi ../..//output_files/Audio_Demo.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Demos/Audio_Demo/Audio_Demo_quartus/software/audio_demo2_bsp/../../nios_system.sopcinfo
+Info: (audio_demo2.elf) 34 KBytes program size (code + initialized data).
+Info:                   22 KBytes free for stack + heap.
+Info: Creating audio_demo2.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source audio_demo2.elf >audio_demo2.objdump
+[audio_demo2 build complete]
+20:57:30 **** Build of configuration Nios II for project audio_demo2 ****
+make all 
+Info: Building ../audio_demo2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../audio_demo2_bsp/
+[BSP build complete]
+[audio_demo2 build complete]
+20:57:33 **** Incremental Build of configuration Nios II for project audio_demo2 ****
+make all 
+Info: Building ../audio_demo2_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../audio_demo2_bsp/
+[BSP build complete]
+[audio_demo2 build complete]
