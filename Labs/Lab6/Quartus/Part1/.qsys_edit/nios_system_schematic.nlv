@@ -1,24 +1,24 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst nios_system.nios2_gen2_0 -pg 1 -lvl 2 -y 160
-preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 370
+preplace inst nios_system.nios2_gen2_0 -pg 1 -lvl 2 -y 170
+preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 380
 preplace inst nios_system.nios2_gen2_0.clock_bridge -pg 1
 preplace inst nios_system -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst nios_system.inferred_ram -pg 1 -lvl 3 -y 30
-preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 3 -y 110
-preplace inst nios_system.sysid_qsys_0 -pg 1 -lvl 3 -y 190
-preplace inst nios_system.LEDs -pg 1 -lvl 3 -y 270
+preplace inst nios_system.inferred_ram -pg 1 -lvl 3 -y 40
+preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 3 -y 120
+preplace inst nios_system.sysid_qsys_0 -pg 1 -lvl 3 -y 200
+preplace inst nios_system.LEDs -pg 1 -lvl 3 -y 280
 preplace inst nios_system.nios2_gen2_0.cpu -pg 1
 preplace inst nios_system.nios2_gen2_0.reset_bridge -pg 1
-preplace inst nios_system.pushbutton -pg 1 -lvl 3 -y 470
-preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 200
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>nios_system</net_container>(MASTER)nios2_gen2_0.data_master,(SLAVE)pushbutton.s1,(SLAVE)inferred_ram.avalon_slave_0,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)LEDs.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1) 1 1 2 330 120 730
+preplace inst nios_system.pushbutton -pg 1 -lvl 3 -y 480
+preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 210
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)onchip_memory2_0.clk1,(SLAVE)sysid_qsys_0.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)LEDs.clk,(SLAVE)pushbutton.clk,(MASTER)clk_0.clk) 1 1 2 290 90 750
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)sysid_qsys_0.reset,(SLAVE)nios2_gen2_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)jtag_uart_0.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)pushbutton.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)LEDs.reset) 1 1 2 310 130 710
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.leds,(SLAVE)LEDs.external_connection) 1 0 3 NJ 70 NJ 70 NJ
 preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(SLAVE)jtag_uart_0.irq,(MASTER)nios2_gen2_0.irq) 1 2 1 690
-preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)LEDs.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)jtag_uart_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)inferred_ram.clock,(SLAVE)pushbutton.clk,(MASTER)clk_0.clk,(SLAVE)nios2_gen2_0.clk) 1 1 2 310 320 750
-preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)nios2_gen2_0.reset,(SLAVE)LEDs.reset,(SLAVE)pushbutton.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)inferred_ram.reset,(MASTER)clk_0.clk_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)onchip_memory2_0.reset1) 1 1 2 290 520 710
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.pushbutton,(SLAVE)pushbutton.external_connection) 1 0 3 NJ 500 NJ 500 NJ
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)onchip_memory2_0.s1,(SLAVE)LEDs.s1,(SLAVE)pushbutton.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 1 2 330 110 730
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.pushbutton,(SLAVE)pushbutton.external_connection) 1 0 3 NJ 510 NJ 510 NJ
 preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)LEDs.external_connection,(SLAVE)nios_system.leds) 1 0 3 NJ 300 NJ 300 NJ
-levelinfo -pg 1 0 80 960
-levelinfo -hier nios_system 90 120 450 800 950
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in,(SLAVE)nios_system.clk) 1 0 1 NJ
+levelinfo -pg 1 0 80 980
+levelinfo -hier nios_system 90 120 450 820 970
