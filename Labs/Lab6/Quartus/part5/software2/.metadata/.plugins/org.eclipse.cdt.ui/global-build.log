@@ -1,97 +1,88 @@
-06:29:04 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
+15:46:43 **** Build of configuration Nios II for project lab6_part5_ap ****
 make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
 [BSP build complete]
-Info: Linking lab6_part4_app.elf
-nios2-elf-g++  -T'../lab6_part4_app_bsp//linker.x' -msys-crt0='../lab6_part4_app_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab6_part4_app_bsp/  -msmallc  -Wl,-Map=lab6_part4_app.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab6_part4_app.elf obj/default/lab6_part4.o -lm -msys-lib=m
-nios2-elf-insert lab6_part4_app.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1774949897 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app_bsp/../../nios_system.sopcinfo
-Info: (lab6_part4_app.elf) 9212 Bytes program size (code + initialized data).
-Info:                      6432 Bytes free for stack + heap.
-Info: Creating lab6_part4_app.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source lab6_part4_app.elf >lab6_part4_app.objdump
-[lab6_part4_app build complete]
-06:29:10 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
-make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
-[BSP build complete]
-[lab6_part4_app build complete]
-06:31:20 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
-make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
-[BSP build complete]
-[lab6_part4_app build complete]
-06:34:21 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
-make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
-[BSP build complete]
-Info: Compiling lab6_part4.c to obj/default/lab6_part4.o
-nios2-elf-gcc -xc -MP -MMD -c -I../lab6_part4_app_bsp//HAL/inc -I../lab6_part4_app_bsp/ -I../lab6_part4_app_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab6_part4.o lab6_part4.c
-lab6_part4.c: In function 'Memory_Access_32':
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../lab6_part5_ap_bsp//HAL/inc -I../lab6_part5_ap_bsp/ -I../lab6_part5_ap_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
+hello_world.c: In function 'Memory_Access_32':
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
            printf("\n\nERROR: Address: %x Read value: %x Expected value: %x",(i*4), *(Ram32bitPTR + i), Testdata);
                   ^
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
-Info: Linking lab6_part4_app.elf
-nios2-elf-g++  -T'../lab6_part4_app_bsp//linker.x' -msys-crt0='../lab6_part4_app_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab6_part4_app_bsp/  -msmallc  -Wl,-Map=lab6_part4_app.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab6_part4_app.elf obj/default/lab6_part4.o -lm -msys-lib=m
-nios2-elf-insert lab6_part4_app.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1774949897 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app_bsp/../../nios_system.sopcinfo
-Info: (lab6_part4_app.elf) 9180 Bytes program size (code + initialized data).
-Info:                      6464 Bytes free for stack + heap.
-Info: Creating lab6_part4_app.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source lab6_part4_app.elf >lab6_part4_app.objdump
-[lab6_part4_app build complete]
-06:35:30 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+hello_world.c: In function 'main':
+hello_world.c:94:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    Memory_Access_8 ((uint8)Ram8bitPTR,(uint32)ram_size,0x01); //checks the memory for 8bit
+                     ^
+hello_world.c:96:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    Memory_Access_16((uint16)Ram16bitPTR,(uint32)100,0x1234); //check the memory for 16bit
+                     ^
+Info: Linking lab6_part5_ap.elf
+nios2-elf-g++  -T'../lab6_part5_ap_bsp//linker.x' -msys-crt0='../lab6_part5_ap_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab6_part5_ap_bsp/  -msmallc  -Wl,-Map=lab6_part5_ap.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab6_part5_ap.elf obj/default/hello_world.o -lm -msys-lib=m
+nios2-elf-insert lab6_part5_ap.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1774985817 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part5" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part5/software/lab6_part5_ap_bsp/../../nios_system.sopcinfo
+Info: (lab6_part5_ap.elf) 10 KBytes program size (code + initialized data).
+Info:                     4676 Bytes free for stack + heap.
+Info: Creating lab6_part5_ap.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source lab6_part5_ap.elf >lab6_part5_ap.objdump
+[lab6_part5_ap build complete]
+15:47:32 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
 make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
 [BSP build complete]
-[lab6_part4_app build complete]
-06:39:20 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
+[lab6_part5_ap build complete]
+15:50:40 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
 make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
 [BSP build complete]
-Info: Compiling lab6_part4.c to obj/default/lab6_part4.o
-nios2-elf-gcc -xc -MP -MMD -c -I../lab6_part4_app_bsp//HAL/inc -I../lab6_part4_app_bsp/ -I../lab6_part4_app_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab6_part4.o lab6_part4.c
-lab6_part4.c: In function 'Memory_Access_32':
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
+[lab6_part5_ap build complete]
+15:51:41 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
+make all 
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
+[BSP build complete]
+[lab6_part5_ap build complete]
+15:52:05 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
+make all 
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
+[BSP build complete]
+[lab6_part5_ap build complete]
+15:52:38 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
+make all 
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
+[BSP build complete]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../lab6_part5_ap_bsp//HAL/inc -I../lab6_part5_ap_bsp/ -I../lab6_part5_ap_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
+hello_world.c: In function 'Memory_Access_32':
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
            printf("\n\nERROR: Address: %x Read value: %x Expected value: %x",(i*4), *(Ram32bitPTR + i), Testdata);
                   ^
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
-Info: Linking lab6_part4_app.elf
-nios2-elf-g++  -T'../lab6_part4_app_bsp//linker.x' -msys-crt0='../lab6_part4_app_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab6_part4_app_bsp/  -msmallc  -Wl,-Map=lab6_part4_app.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab6_part4_app.elf obj/default/lab6_part4.o -lm -msys-lib=m
-nios2-elf-insert lab6_part4_app.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1774949897 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app_bsp/../../nios_system.sopcinfo
-Info: (lab6_part4_app.elf) 9188 Bytes program size (code + initialized data).
-Info:                      6456 Bytes free for stack + heap.
-Info: Creating lab6_part4_app.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source lab6_part4_app.elf >lab6_part4_app.objdump
-[lab6_part4_app build complete]
-06:41:16 **** Incremental Build of configuration Nios II for project lab6_part4_app ****
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:73:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+hello_world.c: In function 'main':
+hello_world.c:95:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    Memory_Access_8 ((uint8)Ram8bitPTR,(uint32)ram_size,0x01); //checks the memory for 8bit
+                     ^
+hello_world.c:97:21: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+    Memory_Access_16((uint16)Ram16bitPTR,(uint32)100,0x1234); //check the memory for 16bit
+                     ^
+Info: Linking lab6_part5_ap.elf
+nios2-elf-g++  -T'../lab6_part5_ap_bsp//linker.x' -msys-crt0='../lab6_part5_ap_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab6_part5_ap_bsp/  -msmallc  -Wl,-Map=lab6_part5_ap.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab6_part5_ap.elf obj/default/hello_world.o -lm -msys-lib=m
+nios2-elf-insert lab6_part5_ap.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1774985817 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part5" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part5/software/lab6_part5_ap_bsp/../../nios_system.sopcinfo
+Info: (lab6_part5_ap.elf) 10 KBytes program size (code + initialized data).
+Info:                     4676 Bytes free for stack + heap.
+Info: Creating lab6_part5_ap.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source lab6_part5_ap.elf >lab6_part5_ap.objdump
+[lab6_part5_ap build complete]
+15:55:13 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
 make all 
-Info: Building ../lab6_part4_app_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part4_app_bsp/
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
 [BSP build complete]
-Info: Compiling lab6_part4.c to obj/default/lab6_part4.o
-nios2-elf-gcc -xc -MP -MMD -c -I../lab6_part4_app_bsp//HAL/inc -I../lab6_part4_app_bsp/ -I../lab6_part4_app_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab6_part4.o lab6_part4.c
-lab6_part4.c: In function 'Memory_Access_32':
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
-           printf("\n\nERROR: Address: %x Read value: %x Expected value: %x",(i*4), *(Ram32bitPTR + i), Testdata);
-                  ^
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32 {aka volatile long unsigned int}' [-Wformat=]
-lab6_part4.c:74:18: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'uint32 {aka long unsigned int}' [-Wformat=]
-Info: Linking lab6_part4_app.elf
-nios2-elf-g++  -T'../lab6_part4_app_bsp//linker.x' -msys-crt0='../lab6_part4_app_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab6_part4_app_bsp/  -msmallc  -Wl,-Map=lab6_part4_app.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab6_part4_app.elf obj/default/lab6_part4.o -lm -msys-lib=m
-nios2-elf-insert lab6_part4_app.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0xd020 --timestamp 1774949897 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1" --jdi ../..//output_files/lab6.jdi --sopcinfo C:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app_bsp/../../nios_system.sopcinfo
-Info: (lab6_part4_app.elf) 9172 Bytes program size (code + initialized data).
-Info:                      6472 Bytes free for stack + heap.
-Info: Creating lab6_part4_app.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source lab6_part4_app.elf >lab6_part4_app.objdump
-[lab6_part4_app build complete]
+[lab6_part5_ap build complete]

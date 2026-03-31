@@ -1,0 +1,9 @@
+15:55:13 **** Incremental Build of configuration Nios II for project lab6_part5_ap ****
+make all 
+Info: Building ../lab6_part5_ap_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab6_part5_ap_bsp/
+[BSP build complete]
+[lab6_part5_ap build complete]
+
+15:55:14 Build Finished (took 506ms)
+

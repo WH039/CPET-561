@@ -9,28 +9,28 @@ z2
 cModel Technology
 Z0 dC:/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/ip/sim
 Eraminfr_be
-Z1 w1774939547
+Z1 w1774983841
 Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R0
-Z6 8../ram_be/raminfr_be.vhd
-Z7 F../ram_be/raminfr_be.vhd
+Z6 dC:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/ip/sim
+Z7 8../ram_be/raminfr_be.vhd
+Z8 F../ram_be/raminfr_be.vhd
 l0
 L5
 VFS:WGP<[=bTB8O:W?=69S0
 !s100 XDE@>EjgbiQT6e_jSljLB1
-Z8 OV;C;10.5b;63
+Z9 OV;C;10.5b;63
 33
-Z9 !s110 1774949201
+Z10 !s110 1774985396
 !i10b 1
-Z10 !s108 1774949201.000000
-Z11 !s90 -reportprogress|300|-2008|-work|work|../ram_be/raminfr_be.vhd|
-Z12 !s107 ../ram_be/raminfr_be.vhd|
+Z11 !s108 1774985396.000000
+Z12 !s90 -reportprogress|300|-2008|-work|work|../ram_be/raminfr_be.vhd|
+Z13 !s107 ../ram_be/raminfr_be.vhd|
 !i113 1
-Z13 o-2008 -work work
-Z14 tExplicit 1 CvgOpt 0
+Z14 o-2008 -work work
+Z15 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
@@ -39,61 +39,61 @@ R5
 DEx4 work 10 raminfr_be 0 22 FS:WGP<[=bTB8O:W?=69S0
 l25
 L16
-VT:`KE]Mz7G:IBTM=e^F0N1
-!s100 >HX@F_g6BMaCJeTAljVE63
-R8
-33
+VXKTmWY_^[=OCVUidJ]>5V3
+!s100 ei<JnSb;U=MhEjIinZPQY0
 R9
-!i10b 1
+33
 R10
+!i10b 1
 R11
 R12
-!i113 1
 R13
+!i113 1
 R14
+R15
 Eraminfr_be_tb
-Z15 w1774948615
+Z16 w1774967828
 R3
 R2
 R4
 R5
-R0
-Z16 8../ram_be/raminfr_be_tb.vhd
-Z17 F../ram_be/raminfr_be_tb.vhd
+R6
+Z17 8../ram_be/raminfr_be_tb.vhd
+Z18 F../ram_be/raminfr_be_tb.vhd
 l0
 L6
 VgKOdfQ6k=_O2A=EX4M65;0
 !s100 ECHlf8]4f3nXbEP9e]>MX3
-R8
-33
 R9
-!i10b 1
+33
 R10
-Z18 !s90 -reportprogress|300|-2008|-work|work|../ram_be/raminfr_be_tb.vhd|
-Z19 !s107 ../ram_be/raminfr_be_tb.vhd|
+!i10b 1
+R11
+Z19 !s90 -reportprogress|300|-2008|-work|work|../ram_be/raminfr_be_tb.vhd|
+Z20 !s107 ../ram_be/raminfr_be_tb.vhd|
 !i113 1
-R13
 R14
+R15
 Abeh
 R3
 R2
 R4
 R5
-Z20 DEx4 work 13 raminfr_be_tb 0 22 gKOdfQ6k=_O2A=EX4M65;0
+Z21 DEx4 work 13 raminfr_be_tb 0 22 gKOdfQ6k=_O2A=EX4M65;0
 l33
 L9
-Z21 V4U9JOI4iObL4PeR3io[9z3
-Z22 !s100 5EAC]ZTaHgDC:4OJjklHe3
-R8
-33
+Z22 V4U9JOI4iObL4PeR3io[9z3
+Z23 !s100 5EAC]ZTaHgDC:4OJjklHe3
 R9
-!i10b 1
+33
 R10
-R18
+!i10b 1
+R11
 R19
+R20
 !i113 1
-R13
 R14
+R15
 Aarch
 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
@@ -106,14 +106,15 @@ l50
 L14
 V>IO:_T@`S?mY:BSTaMn8B2
 !s100 E9Okhz`0Gb5UQK[TDGlQK1
-R8
+R9
 33
 !s110 1774948651
 !i10b 1
 !s108 1774948651.000000
-R18
 R19
+R20
 !i113 1
-R13
 R14
+R15
 w1774939700
+R0

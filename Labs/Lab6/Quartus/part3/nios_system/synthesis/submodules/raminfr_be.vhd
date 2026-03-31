@@ -24,44 +24,43 @@ architecture RTL of raminfr_be is
 
 begin
     
-    RamBlock_1  : process(clk)
+    RAM_1_to_8bit : process(clk)
     begin
-        if(clk'event and clk = '1') then
+        if(rising_edge(clk)) then
             if (reset_n = '0') then
                 read_addr <= (others => '0');
             elsif (writebyteenable_n(0) = '0') then
                 RAM_1(CONV_INTEGER(address)) <= writedata(7 downto 0);
             end if;
-            read_addr <= address;
         end if;
-    end process RamBlock_1;
+    end process;
 
-    RamBlock_2  : process(clk)
+    RAM_2_to_8bit : process(clk)
     begin
-        if(clk'event and clk = '1') then
-            if(writebyteenable_n(0) = '0') then
-					RAM_2(CONV_INTEGER(address)) <= writedata(7 downto 0);
-				end if;
+        if(rising_edge(clk)) then
+            if (writebyteenable_n(0) = '0') then
+                RAM_2(CONV_INTEGER(address)) <= writedata(15 downto 8);
+            end if;
         end if;
-    end process RamBlock_2;
+    end process;
 
-    RamBlock_3  : process(clk)
+    RAM_3_to_8bit : process(clk)
     begin
-        if(clk'event and clk = '1') then
-            if(writebyteenable_n(0) = '0') then
-					RAM_3(CONV_INTEGER(address)) <= writedata(7 downto 0);
-				end if;
+        if(rising_edge(clk)) then
+            if (writebyteenable_n(0) = '0') then
+                RAM_3(CONV_INTEGER(address)) <= writedata(23 downto 16);
+            end if;
         end if;
-    end process RamBlock_3;
+    end process;
 
-    RamBlock_4  : process(clk)
+    RAM_4_to_8bit : process(clk)
     begin
-        if(clk'event and clk = '1') then
-            if(writebyteenable_n(0) = '0') then
-					RAM_4(CONV_INTEGER(address)) <= writedata(7 downto 0);
-				end if;
+        if(rising_edge(clk)) then
+           if (writebyteenable_n(0) = '0') then
+                RAM_4(CONV_INTEGER(address)) <= writedata(31 downto 24);
+            end if;
         end if;
-    end process RamBlock_4;
+    end process;
 
     readdata <= RAM_1(CONV_INTEGER(read_addr)) & RAM_2(CONV_INTEGER(read_addr)) & RAM_3(CONV_INTEGER(read_addr)) & RAM_4(CONV_INTEGER(read_addr));
 

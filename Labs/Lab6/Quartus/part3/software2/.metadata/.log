@@ -1,4 +1,4 @@
-!SESSION 2026-03-31 06:00:16.394 -----------------------------------------------
+!SESSION 2026-03-31 14:16:30.586 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -6,7 +6,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-03-31 06:01:18.387
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-03-31 14:19:15.820
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. ; version: 1.100.0.v20160217-0435
 !STACK 0
 javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -55,7 +55,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 33 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 06:01:19.021
+!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 14:19:15.929
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -117,7 +117,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 43 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 06:01:19.270
+!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 14:19:16.174
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -175,7 +175,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 39 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 06:01:19.805
+!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 14:19:16.530
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -235,12 +235,97 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 41 more
 
-!ENTRY org.eclipse.cdt.core 1 0 2026-03-31 06:02:32.430
-!MESSAGE Indexed 'lab6_part4_app_bsp' (80 sources, 62 headers) in 1.25 sec: 1,190 declarations; 2,486 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (4.9%)
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-31 14:20:52.851
+!MESSAGE Indexed 'lab6_part4_ap_bsp' (80 sources, 62 headers) in 0.861 sec: 1,190 declarations; 2,486 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (4.9%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2026-03-31 06:02:35.890
-!MESSAGE Indexed 'lab6_part4_app' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
-!SESSION 2026-03-31 06:12:20.442 -----------------------------------------------
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-31 14:20:57.493
+!MESSAGE Indexed 'lab6_part4_ap' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:25:03.736
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:25:06.555
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:30:18.982
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:30:20.972
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:35:02.642
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:35:04.612
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:35:52.343
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:35:54.433
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:36:36.423
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:36:38.466
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:37:48.593
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:37:50.497
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:43:55.844
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:43:57.740
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:46:27.389
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:46:29.332
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:50:26.922
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:50:28.902
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:54:05.176
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:54:07.112
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:55:16.754
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:55:18.721
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY org.eclipse.core.jobs 4 2 2026-03-31 14:55:21.556
+!MESSAGE An internal error occurred during: "Process Console Input Job".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:55:53.978
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:55:55.947
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:59:03.378
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 14:59:05.354
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+!SESSION 2026-03-31 15:13:11.051 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -248,7 +333,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-03-31 06:12:30.248
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2026-03-31 15:13:28.210
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. ; version: 1.100.0.v20160217-0435
 !STACK 0
 javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -297,7 +382,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 33 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 06:12:30.344
+!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 15:13:28.292
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -359,7 +444,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 43 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 06:12:30.802
+!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 15:13:28.530
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -417,7 +502,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 39 more
 
-!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 06:12:31.117
+!ENTRY org.eclipse.oomph.setup.core 2 0 2026-03-31 15:13:28.843
 !MESSAGE sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 !STACK 0
 org.eclipse.oomph.util.IOExceptionWithCause: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
@@ -477,74 +562,29 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(Unknown Source)
 	... 41 more
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:15:36.935
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
+!ENTRY org.eclipse.cdt.managedbuilder.core 2 0 2026-03-31 15:15:09.011
+!MESSAGE Build Artifact is missing in project 'lab6_part4_ap' configuration 'Nios II'
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:15:39.338
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:15:50.763
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0x9020 --id=0x6 --timestamp=1774984050 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
 
-!ENTRY org.eclipse.debug.ui 4 120 2026-03-31 06:16:37.640
-!MESSAGE Error logged from Debug UI: 
-!STACK 1
-org.eclipse.debug.core.DebugException: Target request failed: Target is not suspended.
-	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.throwDebugException(CDebugElement.java:295)
-	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.requestFailed(CDebugElement.java:262)
-	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.targetRequestFailed(CDebugElement.java:250)
-	at org.eclipse.cdt.debug.internal.core.model.CMemoryBlockExtension.getAddressableSize(CMemoryBlockExtension.java:185)
-	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.initAddressableSize(AbstractAsyncTableRendering.java:904)
-	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.access$19(AbstractAsyncTableRendering.java:898)
-	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering$6.run(AbstractAsyncTableRendering.java:628)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-!SUBENTRY 1 org.eclipse.cdt.debug.core 4 5010 2026-03-31 06:16:37.640
-!MESSAGE Target request failed: Target is not suspended.
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:15:52.570
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0x9020 --id=0x6 --timestamp=1774984050]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:29:13.608
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:22:46.298
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0x9020 --id=0x6 --timestamp=1774984050 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:29:15.908
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:22:48.210
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0x9020 --id=0x6 --timestamp=1774984050]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:31:23.444
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:24:45.399
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0x9020 --id=0x6 --timestamp=1774984050 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:31:25.766
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:24:47.305
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0x9020 --id=0x6 --timestamp=1774984050]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:34:26.048
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:28:25.790
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0x9020 --id=0x6 --timestamp=1774984050 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab6/Quartus/part3/software/lab6_part4_ap/lab6_part4_ap.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:34:28.297
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:35:33.235
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:35:35.473
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:39:24.808
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:39:27.164
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
-
-!ENTRY org.eclipse.debug.ui 4 120 2026-03-31 06:41:02.586
-!MESSAGE Error logged from Debug UI: 
-!STACK 1
-org.eclipse.debug.core.DebugException: Target request failed: Target is not suspended.
-	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.throwDebugException(CDebugElement.java:295)
-	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.requestFailed(CDebugElement.java:262)
-	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.targetRequestFailed(CDebugElement.java:250)
-	at org.eclipse.cdt.debug.internal.core.model.CMemoryBlockExtension.getAddressableSize(CMemoryBlockExtension.java:185)
-	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.initAddressableSize(AbstractAsyncTableRendering.java:904)
-	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.access$19(AbstractAsyncTableRendering.java:898)
-	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering$6.run(AbstractAsyncTableRendering.java:628)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-!SUBENTRY 1 org.eclipse.cdt.debug.core 4 5010 2026-03-31 06:41:02.586
-!MESSAGE Target request failed: Target is not suspended.
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:41:20.715
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0xd020 --id=0x6 --timestamp=1774949897 /cygdrive/c/Users/a9284/Documents/GitHub/CPET-561/Labs/Lab6/Quartus/part1/software/lab6_part4_app/lab6_part4_app.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 06:41:22.992
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0xd020 --id=0x6 --timestamp=1774949897]
+!ENTRY com.altera.sbtgui.launch 1 0 2026-03-31 15:28:27.715
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0x9020 --id=0x6 --timestamp=1774984050]

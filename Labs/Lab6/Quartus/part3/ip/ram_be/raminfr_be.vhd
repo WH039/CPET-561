@@ -32,43 +32,33 @@ begin
             elsif (writebyteenable_n(0) = '0') then
                 RAM_1(CONV_INTEGER(address)) <= writedata(7 downto 0);
             end if;
-            read_addr <= address;
         end if;
     end process;
 
     RAM_2_to_8bit : process(clk)
     begin
         if(rising_edge(clk)) then
-            if (reset_n = '0') then
-                read_addr <= (others => '0');
-            elsif (writebyteenable_n(0) = '0') then
-                RAM_2(CONV_INTEGER(address)) <= writedata(7 downto 0);
+            if (writebyteenable_n(0) = '0') then
+                RAM_2(CONV_INTEGER(address)) <= writedata(15 downto 8);
             end if;
-            read_addr <= address;
         end if;
     end process;
 
     RAM_3_to_8bit : process(clk)
     begin
         if(rising_edge(clk)) then
-            if (reset_n = '0') then
-                read_addr <= (others => '0');
-            elsif (writebyteenable_n(0) = '0') then
-                RAM_3(CONV_INTEGER(address)) <= writedata(7 downto 0);
+            if (writebyteenable_n(0) = '0') then
+                RAM_3(CONV_INTEGER(address)) <= writedata(23 downto 16);
             end if;
-            read_addr <= address;
         end if;
     end process;
 
     RAM_4_to_8bit : process(clk)
     begin
         if(rising_edge(clk)) then
-            if (reset_n = '0') then
-                read_addr <= (others => '0');
-            elsif (writebyteenable_n(0) = '0') then
-                RAM_4(CONV_INTEGER(address)) <= writedata(7 downto 0);
+           if (writebyteenable_n(0) = '0') then
+                RAM_4(CONV_INTEGER(address)) <= writedata(31 downto 24);
             end if;
-            read_addr <= address;
         end if;
     end process;
 
