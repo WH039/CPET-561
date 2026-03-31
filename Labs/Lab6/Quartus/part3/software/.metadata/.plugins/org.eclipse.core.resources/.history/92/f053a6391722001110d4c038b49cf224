@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdint.h>
+#include "system.h"
+#include <io.h>
+
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+//pointers
+uint32* pushbutton_ptr = (uint32*)PUSHBUTTONS_BASE;
+uint32* leds_ptr = (uint32*)LEDS_BASE;
+uint16* ram_ptr = (uint16*)INFERRED_RAM_BASE;
+
+void uint32_test_ram(uint32 * start, uint32 size, uint32 data){
+	*ledsBase_ptr = 0x00;
+
+	for(int i = 0, i < (size/4); i++){
+		start
+	}
+}
+
+int main(void)
+{
+
+    while (1)
+    {
+    }
+
+    return 0;
+}

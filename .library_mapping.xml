@@ -4,5 +4,5 @@
   <Mappings Location="Common Libraries/IEEE Synopsys" Library="ieee"/>
   <Mappings Location="Common Libraries" Library="not mapped"/>
   <Mappings Location="Common Libraries/STD" Library="std"/>
-  <Mappings Location="Labs/Lab4" Library="work"/>
+  <Mappings Location="Labs/Lab6/Quartus/part1/ip" Library="work"/>
 </com.sigasi.hdt.shared.librarymapping.model:LibraryMappings>

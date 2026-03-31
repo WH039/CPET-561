@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "system.h"
+#include "io.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+
+typedef   signed char   sint8;            // signed 8 bit values
+typedef unsigned char   uint8;            // unsigned 8 bit values
+typedef   signed short  sint16;           // signed 16 bit values
+typedef unsigned short  uint16;           // unsigned 16 bit values
+typedef   signed long   sint32;           // signed 32 bit values
+typedef unsigned long   uint32;
+
+volatile uint32* PushbuttonPTR	         =(uint32*) PUSHBUTTON_BASE;
+volatile uint32* Ram32bitPTR             =(uint32*) INFERRED_RAM_BE_0_BASE;
+volatile uint16* Ram16bitPTR             =(uint16*) INFERRED_RAM_BE_0_BASE;
+volatile uint8*  Ram8bitPTR              =(uint8*)  INFERRED_RAM_BE_0_BASE;
+uint32* JtagUartPtr 					 =(uint32*) JTAG_UART_0_BASE;
+uint8*  LedPtr                           =(uint8*)  LEDS_BASE;
+
+volatile uint32 sAddress;
+volatile uint32 Testdata;
+volatile uint32 ram_size = 16384; //bytes come from raminfr component
+
+uint32  Ramp32;
+uint16  Ramp16;
+uint8   Ramp8;
+
+uint8  Mem_loop;
+volatile uint8 Push_read;
+
+volatile uint32 checkbit_32;
+volatile uint32 checkbit_16;
+volatile uint32 checkbit_8;
+
+void Memory_Access_8(uint8 sAddress, uint32 ram_size, uint8 Testdata)
+{
+    for(int i = 0; i<ram_size;i++){
+       *(Ram8bitPTR + i) = Testdata;
+    }
+    for(int i= 0; i<ram_size;i++)
+    {
+    	checkbit_8 = *(Ram8bitPTR + i);
+      if(checkbit_8 != Testdata){
+          printf("\n\nERROR: Address: %x Read value: %x Expected value: %x",i, *(Ram8bitPTR + i), Testdata);
+          *LedPtr |= 0xFF;
+      }
+    }
+}
+
+void Memory_Access_16(uint16 sAddress, uint32 ram_size, uint16 Testdata)
+{
+   for(int i = 0; i<ram_size;i++){
+       *(Ram16bitPTR + i) = Testdata;
+    }
+    for(int i= 0; i<ram_size;i++)
+    {
+    	checkbit_16 = *(Ram16bitPTR + i);
+      if(checkbit_16 != Testdata){
+          printf("\n\nERROR: Address: %x Read value: %x Expected value: %x",(i*2), *(Ram16bitPTR + i), Testdata);
+          *LedPtr |= 0xFF;
+      }
+    }
+}
+void Memory_Access_32(uint32 sAddress, uint32 ram_size, uint32 Testdata)
+{
+   for(int i = 0; i<ram_size;i++){
+       *(Ram32bitPTR + i) = Testdata;
+    }
+    for(int i= 0; i<ram_size;i++)
+    {
+      checkbit_32 = *(Ram32bitPTR + i);
+      if(checkbit_32 != Testdata){
+          printf("\n\nERROR: Address: %x Read value: %x Expected value: %x",(i*4), *(Ram32bitPTR + i), Testdata);
+          *LedPtr |= 0xFF;
+      }
+    }
+}
+void PushButton_isr(void *context) //pushbutton ISR
+{
+	*(PushbuttonPTR + 3 ) = 0; //clears edge
+    *LedPtr |= 0x13; //THE UNIQUE LED lights
+    printf("\nRam Test Done");
+}
+int main(void){
+	*LedPtr = 0x00;
+	Push_read = *PushbuttonPTR;
+	Push_read = Push_read & 0x02;
+	while(1){
+		if(Push_read == 0){
+			alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID,PUSHBUTTON_IRQ,PushButton_isr,0,0);
+			exit(0);
+		}
+		else{
+			*LedPtr = 0x02;
+			Memory_Access_8 (0,16384,0x00);
+			*LedPtr = 0x04;
+			Memory_Access_16(0,8192,0x1234);
+			*LedPtr = 0x08;
+			Memory_Access_32(0,4096,0xABCDEF90);
+		}
+	}
+}
