@@ -80,25 +80,21 @@ void PushButton_isr(void *context) //pushbutton ISR
 	*(PushbuttonPTR + 3 ) = 0; //clears edge
     *LedPtr |= 0x13; //THE UNIQUE LED lights
     printf("\nRam Test Done");
+    exit(0);
 }
 int main(void){
 
-	alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID,PUSHBUTTON_IRQ,PushButton_isr,0,0);
+    Push_read = *PushbuttonPTR;
+	Push_read = Push_read & 0x02;
+	
 	while(1){
+        alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID,PUSHBUTTON_IRQ,PushButton_isr,0,0);
 		*LedPtr = 0x00;
-		Push_read = *PushbuttonPTR;
-		Push_read = Push_read & 0x02;
-		if(Push_read == 0){
-
-			exit(0);
-		}
-		else{
-			Memory_Access_8 ((uint8)Ram8bitPTR,(uint32)ram_size,0x01); //checks the memory for 8bit
-			*LedPtr = 0x02;
-			Memory_Access_16((uint16)Ram16bitPTR,(uint32)100,0x1234); //check the memory for 16bit
-			*LedPtr = 0x04;
-			Memory_Access_32((uint32)Ram32bitPTR,(uint32)100,0xABCDEF90);//check the memory for 32bit
-			*LedPtr = 0x08;
-		}
+		Memory_Access_8 ((uint8)Ram8bitPTR,(uint32)ram_size,0x01); //checks the memory for 8bit
+		*LedPtr = 0x02;
+		Memory_Access_16((uint16)Ram16bitPTR,(uint32)100,0x1234); //check the memory for 16bit
+		*LedPtr = 0x04;
+		Memory_Access_32((uint32)Ram32bitPTR,(uint32)100,0xABCDEF90);//check the memory for 32bit
+		*LedPtr = 0x08;
 	}
 }
