@@ -2,6 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
+use ieee.std_logic_textio.all;
 
 entity hpf_tb is
 end hpf_tb;
@@ -33,14 +34,16 @@ architecture sim of hpf_tb is
 
 begin
 
-    clk_proc : process
+    clk_process :process
     begin
-        while not sim_done loop
-            clk <= '0'; wait for CLK_PERIOD / 2;
-            clk <= '1'; wait for CLK_PERIOD / 2;
+        while true loop
+            clk <= '0';
+            wait for CLK_PERIOD / 2;
+            clk <= '1';
+            wait for CLK_PERIOD / 2;
         end loop;
         wait;
-    end process clk_proc;
+    end process;
 
     dut : high_pass_filter
         port map (
@@ -53,9 +56,9 @@ begin
 
     stimulus : process is
         file read_file    : text open read_mode  is
-            "./src/verification_src/one_cycle_integer.csv";
+            "C:\Users\a9284\Documents\GitHub\CPET-561\CPET-561\Labs\Lab8\one_cycle_200_8k.csv";
         file results_file : text open write_mode is
-            "./src/verification_src/output_waveform.csv";
+            "C:\Users\a9284\Documents\GitHub\CPET-561\CPET-561\Labs\Lab8\output_waveform_high.csv";
 
         variable lineIn    : line;
         variable lineOut   : line;
@@ -77,23 +80,21 @@ begin
         end loop;
         file_close(read_file);
 
-        for i in 1 to 10 loop
-            for j in 0 to 39 loop
+        for j in 0 to 39 loop
 
-                data_in <= std_logic_vector(audioSampleArray(j));
+            data_in <= std_logic_vector(audioSampleArray(j));
 
-                wait until rising_edge(clk);
-                filter_en <= '1';
-                wait until rising_edge(clk);
-                filter_en <= '0';
+            wait until rising_edge(clk);
+            filter_en <= '1';
+            wait until rising_edge(clk);
+            filter_en <= '0';
 
-                wait for CLK_PERIOD * 2;
+            wait for CLK_PERIOD * 2;
 
-                writeValue := to_integer(signed(data_out));
-                write(lineOut, writeValue);
-                writeline(results_file, lineOut);
+            writeValue := to_integer(signed(data_out));
+            write(lineOut, writeValue);
+            writeline(results_file, lineOut);
 
-            end loop;
         end loop;
 
         file_close(results_file);

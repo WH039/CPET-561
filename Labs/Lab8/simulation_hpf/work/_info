@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/a9284/Documents/GitHub/CPET-561/CPET-561/Labs/Lab8/simulation_hpf
+Ehigh_pass_filter
+Z1 w1775588148
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8../high_pass_filter.vhd
+Z7 F../high_pass_filter.vhd
+l0
+L5
+ViFW;KcFmn]FnTQiK[`B0^2
+!s100 cN:;PNNDYdGKVcMJ3414]3
+Z8 OV;C;10.5b;63
+33
+Z9 !s110 1775588781
+!i10b 1
+Z10 !s108 1775588780.000000
+Z11 !s90 -reportprogress|300|-2008|-work|work|../high_pass_filter.vhd|
+Z12 !s107 ../high_pass_filter.vhd|
+!i113 1
+Z13 o-2008 -work work
+Z14 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+DEx4 work 16 high_pass_filter 0 22 iFW;KcFmn]FnTQiK[`B0^2
+l56
+L15
+VD>?WdBLik7;<^[KXg48Oh1
+!s100 AB`VXg7DP@48nkN3i?_ZW3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ehpf_tb
+Z15 w1775588242
+Z16 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z17 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R4
+R5
+R0
+Z18 8../hpf_tb.vhd
+Z19 F../hpf_tb.vhd
+l0
+L7
+VD_k[=16=7077[l]j>DLLz0
+!s100 kzAH6<kbXXdNnnEmThaMY1
+R8
+33
+R9
+!i10b 1
+Z20 !s108 1775588781.000000
+Z21 !s90 -reportprogress|300|-2008|-work|work|../hpf_tb.vhd|
+Z22 !s107 ../hpf_tb.vhd|
+!i113 1
+R13
+R14
+Asim
+R16
+R17
+R4
+R5
+Z23 DEx4 work 6 hpf_tb 0 22 D_k[=16=7077[l]j>DLLz0
+l35
+L10
+Z24 VBR2RiehbU>de_h?zjc=i[0
+Z25 !s100 2ijl^GOo]@Q]IdgCP>^eE3
+R8
+33
+R9
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R13
+R14
+Elow_pass_filter
+Z26 w1775587696
+R2
+R3
+R4
+R5
+R0
+Z27 8../low_pass_filter.vhd
+Z28 F../low_pass_filter.vhd
+l0
+L5
+VZZigAUHBZ_4>73l]GXgFX1
+!s100 BJOL>`2gkcVAeJWPoXXF>2
+R8
+33
+Z29 !s110 1775588481
+!i10b 1
+Z30 !s108 1775588481.000000
+Z31 !s90 -reportprogress|300|-2008|-work|work|../low_pass_filter.vhd|
+Z32 !s107 ../low_pass_filter.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R3
+R4
+R5
+DEx4 work 15 low_pass_filter 0 22 ZZigAUHBZ_4>73l]GXgFX1
+l55
+L15
+VnjM`UHZ2XzkAIboXiVO[N1
+!s100 3l`;MKT26h9gEgo^`G1?L3
+R8
+33
+R29
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R13
+R14
+Emultiplier
+Z33 w1775584602
+R4
+R5
+R0
+Z34 8../multiplier.vhd
+Z35 F../multiplier.vhd
+l0
+L42
+VCgb3^igT1bJc1m<Zd448Z0
+!s100 e8ON0b?W8fYM;]<nmmZP50
+R8
+33
+Z36 !s110 1775588780
+!i10b 1
+R10
+Z37 !s90 -reportprogress|300|-2008|-work|work|../multiplier.vhd|
+Z38 !s107 ../multiplier.vhd|
+!i113 1
+R13
+R14
+Asyn
+R4
+R5
+DEx4 work 10 multiplier 0 22 Cgb3^igT1bJc1m<Zd448Z0
+l74
+L52
+VJK^`08im3UKK3_SVbZ30X2
+!s100 @RciBKk]K]T`SkW6KHNjP1
+R8
+33
+R36
+!i10b 1
+R10
+R37
+R38
+!i113 1
+R13
+R14

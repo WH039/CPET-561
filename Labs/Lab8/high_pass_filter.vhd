@@ -55,14 +55,15 @@ architecture rtl of high_pass_filter is
 
 begin
 
-    tap(0) <= data_in;
+    
 
     delay_regs : process(clk, reset_n)
     begin
         if reset_n = '0' then
-            tap(1 to 16) <= (others => (others => '0'));
+            tap(0 to 16) <= (others => (others => '0'));
         elsif rising_edge(clk) then
             if filter_en = '1' then
+                tap(0) <= data_in;
                 for k in 1 to 16 loop
                     tap(k) <= tap(k-1);
                 end loop;
