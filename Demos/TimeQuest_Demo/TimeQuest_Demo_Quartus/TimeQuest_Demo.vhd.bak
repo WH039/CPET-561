@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity TimeQuest_Demo is
+    port(
+        CLOCK_50   : in std_logic;
+        reset_n    : in std_logic;    
+
+        input_a    : in std_logic_vector(15 downto 0);
+        input_b    : in std_logic_vector(15 downto 0);
+
+        result     : out std_logic_vector(15 downto 0)
+    );
+end entity TimeQuest_Demo;
+
+architecture RTL of TimeQuest_Demo is
+
+    signal a_sync1 : std_logic_vector(15 downto 0);
+    signal a_sync2 : std_logic_vector(15 downto 0);
+
+    signal b_sync1 : std_logic_vector(15 downto 0);
+    signal b_sync2 : std_logic_vector(15 downto 0);
+
+    signal temp_result  : std_logic_vector(15 downto 0);
+    signal result_sync1 : std_logic_vector(15 downto 0);
+    signal result_sync2 : std_logic_vector(15 downto 0);
+    
+begin
+    
+    input_sync : process (CLOCK_50, reset_n)
+    begin
+        if (reset_n = '0') then
+            a_sync1 <= (others => '0');
+            a_sync2 <= (others => '0');
+
+            b_sync1 <= (others => '0');
+            b_sync2 <= (others => '0');
+        ELSIF (RISING_EDGE(CLOCK_50)) then
+            a_sync1 <= input_a;
+            a_sync2 <= a_sync1;
+
+            b_sync1 <= input_b;
+            b_sync2 <= b_sync1;
+        end if;
+    end process;
+
+    addr : process (a_sync2, b_sync2)
+    begin
+        temp_result <= std_logic_vector(unsigned(a_sync2) + unsigned(b_sync2));
+    end process;
+
+    result_sync : process(CLOCK_50, reset_n)
+    begin
+        if (reset_n) then
+            result <= (others => '0');
+            result_sync1 <= (others => '0');
+            result_sync2 <= (others => '0');
+        elsif (RISING_EDGE(CLOCK_50)) then
+            result_sync1 <= temp_result;
+            result_sync2 <= result_sync1;
+            result <= result_sync2;
+        end if;
+    end process;
+
+end architecture RTL;
