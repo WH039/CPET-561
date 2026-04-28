@@ -69,6 +69,7 @@ architecture rtl of audio_filter is
     signal data_in_reg  : std_logic_vector(15 downto 0) := (others => '0');
     signal switch_reg : std_logic := '0';
     signal filter_en : std_logic := '0';
+    signal data_out : std_logic_vector(15 downto 0) := (others => '0');
 
     type reg_array is array(0 to 16) of std_logic_vector(15 downto 0);
     signal tap : reg_array := (others => (others => '0'));
@@ -92,16 +93,14 @@ begin
             switch_reg <= '0';
             filter_en <= '0';
         elsif rising_edge(clk) then
-            filter_en <= '0';
             if write = '1' then
                 if adress = '0' then
                     data_in_reg <= writedata;
-                    filter_en <= '1';
+                    filter_en <= '0';
                 else
                     switch_reg <= writedata(0);
+                    filter_en <= '1';
                 end if;
-            else
-                filter_en <= '0';
             end if;
         end if;
     end process write_proc;

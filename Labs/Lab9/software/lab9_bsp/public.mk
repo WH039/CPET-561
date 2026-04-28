@@ -157,9 +157,9 @@ SOPC_SYSID_FLAG += --sidp=0x4021060
 ELF_PATCH_FLAG  += --sidp 0x4021060
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1776765531
-SOPC_SYSID_FLAG += --timestamp=1776765531
-ELF_PATCH_FLAG  += --timestamp 1776765531
+# setting SOPC_TIMESTAMP is 1776802662
+SOPC_SYSID_FLAG += --timestamp=1776802662
+ELF_PATCH_FLAG  += --timestamp 1776802662
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 
@@ -222,7 +222,8 @@ ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 # access routines) to fail. You can define a symbol provided by each driver to 
 # prevent it from being removed. If true, adds -DALT_USE_SMALL_DRIVERS to 
 # ALT_CPPFLAGS in public.mk. none 
-# setting hal.enable_reduced_device_drivers is false
+# setting hal.enable_reduced_device_drivers is true
+ALT_CPPFLAGS += -DALT_USE_SMALL_DRIVERS
 
 # Turns on HAL runtime stack checking feature. Enabling this setting causes 
 # additional code to be placed into each subroutine call to generate an 

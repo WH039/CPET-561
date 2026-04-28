@@ -1,22 +1,9 @@
-06:57:11 **** Build of configuration Nios II for project lab9 ****
+16:26:47 **** Incremental Build of configuration Nios II for project lab9 ****
 make all 
 Info: Building ../lab9_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../lab9_bsp/
 [BSP build complete]
-Info: Compiling lab9.c to obj/default/lab9.o
-nios2-elf-gcc -xc -MP -MMD -c -I../lab9_bsp//HAL/inc -I../lab9_bsp/ -I../lab9_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/lab9.o lab9.c
-Info: Linking lab9.elf
-nios2-elf-g++  -T'../lab9_bsp//linker.x' -msys-crt0='../lab9_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../lab9_bsp/   -Wl,-Map=lab9.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o lab9.elf obj/default/lab9.o -lm -msys-lib=m
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: lab9.elf section `.text' will not fit in region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x4021128 of lab9.elf section `.rodata' is not within region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x4022cf8 of lab9.elf section `.rwdata' is not within region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x4024a44 of lab9.elf section `.bss' is not within region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x4021128 of lab9.elf section `.rodata' is not within region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x4022cf8 of lab9.elf section `.rwdata' is not within region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x4024a44 of lab9.elf section `.bss' is not within region `onchip_memory2_1'
-c:/intelfpga_lite/18.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: region `onchip_memory2_1' overflowed by 19012 bytes
-collect2.exe: error: ld returned 1 exit status
-make: *** [lab9.elf] Error 1
+[lab9 build complete]
 
-06:57:13 Build Finished (took 1s.807ms)
+16:26:47 Build Finished (took 507ms)
 
